@@ -1,0 +1,17 @@
+.mat-button-toggle-group {
+  .mat-button-toggle-checked {
+    .mat-button-toggle-focus-overlay {
+      border-bottom: none;
+    }
+  }
+  .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+    line-height: 32px;
+    padding: 17px 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .withIcon {
+    line-height: 22px;
+    padding: 0;
+  }
+}

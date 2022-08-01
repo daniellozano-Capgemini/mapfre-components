@@ -9,12 +9,7 @@
     "allowSyntheticDefaultImports": true,
 
     "paths": {
-      "mapfre-components": [
-        "dist/mapfre-components"
-      ],
-      "mapfre-demo": [
-        "dist/mapfre-demo"
-      ]
+      "mapfre-components": ["dist/mapfre-components"]
     },
 
     "sourceMap": true,
