@@ -1,19 +1,21 @@
 import { Directive, HostListener, OnInit } from '@angular/core';
-import { CurrencyFormatterPipe, PipeFormatOptions } from './currency-formatter.pipe';
-import { MapfreInputComponent } from './mapfre-input/mapfre-input.component';
+import {
+  CurrencyFormatterPipe,
+  PipeFormatOptions,
+} from '../../pipes/currency-formatter.pipe';
+import { MapfreInputComponent } from '../../components/mapfre-input/mapfre-input.component';
 
 @Directive({
-  selector: '[currency-formatter]'
+  selector: '[currency-formatter]',
 })
 export class CurrencyFormatterDirective implements OnInit {
-
   private formatOpts: PipeFormatOptions;
   private prevValue: string = '';
 
-
-  constructor(private hostComponent: MapfreInputComponent, private formatterPipe: CurrencyFormatterPipe) {
-  }
-
+  constructor(
+    private hostComponent: MapfreInputComponent,
+    private formatterPipe: CurrencyFormatterPipe
+  ) {}
 
   ngOnInit() {
     // Get host component options
@@ -57,15 +59,23 @@ export class CurrencyFormatterDirective implements OnInit {
     }
 
     // Turn visible encoded value by pressed letter.
-    let calcValue = value.replace('*', checkResult === this.formatOpts.decimal_separator ?
-      this.formatOpts.decimal_separator :
-      pressedLetter);
+    let calcValue = value.replace(
+      '*',
+      checkResult === this.formatOpts.decimal_separator
+        ? this.formatOpts.decimal_separator
+        : pressedLetter
+    );
 
     if (this.isDecimalKey(pressedLetter)) {
-      let [integer = '', fraction = ''] = calcValue.split(this.formatOpts.decimal_separator);
+      let [integer = '', fraction = ''] = calcValue.split(
+        this.formatOpts.decimal_separator
+      );
 
       // Control decimals
-      fraction = this.formatterPipe.decimalsTransform(fraction, this.formatOpts);
+      fraction = this.formatterPipe.decimalsTransform(
+        fraction,
+        this.formatOpts
+      );
 
       //  Control overflow when rounding
       if (fraction === '-1') {
@@ -73,16 +83,24 @@ export class CurrencyFormatterDirective implements OnInit {
       }
 
       // Add thousands to integer part
-      integer = this.formatterPipe.integerTransform(integer || '0', this.formatOpts);
+      integer = this.formatterPipe.integerTransform(
+        integer || '0',
+        this.formatOpts
+      );
 
       // Update new value
-      calcValue = fraction === '-1' ? integer : integer + this.formatOpts.decimal_separator + fraction;
+      calcValue =
+        fraction === '-1'
+          ? integer
+          : integer + this.formatOpts.decimal_separator + fraction;
 
       this.setInputValue(calcValue);
       return;
     }
 
-    this.setInputValue(this.formatterPipe.transform(calcValue, this.formatOpts, true));
+    this.setInputValue(
+      this.formatterPipe.transform(calcValue, this.formatOpts, true)
+    );
   }
 
   @HostListener('focusout', ['$event.target.value'])
@@ -131,7 +149,10 @@ export class CurrencyFormatterDirective implements OnInit {
     }
 
     // Control max decimals, avoid adding more decimals than allowed
-    if (this.formatOpts.decimals > 0 && fraction.length > this.formatOpts.decimals) {
+    if (
+      this.formatOpts.decimals > 0 &&
+      fraction.length > this.formatOpts.decimals
+    ) {
       return false;
     }
 
@@ -147,7 +168,7 @@ export class CurrencyFormatterDirective implements OnInit {
     this.prevValue = value;
 
     // Update component value
-    this.hostComponent.value = value;
+    (this.hostComponent as any).value = value;
 
     // Update native input value
     this.hostComponent.inputEl.nativeElement.value = value;
@@ -160,21 +181,32 @@ export class CurrencyFormatterDirective implements OnInit {
    * @param endIndex End index
    * @param insertion New substring
    */
-  private replaceBetween = (origin: string, startIndex: number, endIndex: number, insertion: string): string =>
-    `${origin.substring(0, startIndex)}${insertion}${origin.substring(endIndex)}`;
+  private replaceBetween = (
+    origin: string,
+    startIndex: number,
+    endIndex: number,
+    insertion: string
+  ): string =>
+    `${origin.substring(0, startIndex)}${insertion}${origin.substring(
+      endIndex
+    )}`;
 
   /**
    * Check if pressed letter is decimal separator
    * @param letter Pressed letter
    */
-  private isDecimalKey = (letter: string): boolean => letter === '.' || letter === ',';
+  private isDecimalKey = (letter: string): boolean =>
+    letter === '.' || letter === ',';
 
   private checkIsDefaultActionInputType = (inputType: string) => {
     // Manage delete command actions
     if (inputType.includes('delete')) {
       return true;
     }
-    if (inputType.includes('historyUndo') || inputType.includes('historyRedo')) {
+    if (
+      inputType.includes('historyUndo') ||
+      inputType.includes('historyRedo')
+    ) {
       return true;
     }
     // Other default valid actions

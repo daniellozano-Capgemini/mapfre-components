@@ -37,10 +37,8 @@ import { MapfreResultComponent } from './mapfre-result/mapfre-result.component';
 import { MapfreCheckboxComponent } from './mapfre-checkbox/mapfre-checkbox.component';
 import { MapfreTextAreaComponent } from './mapfre-text-area/mapfre-text-area.component';
 import { MapfreAutocompleteComponent } from './mapfre-autocomplete/mapfre-autocomplete.component';
-import { MaskDateDirective } from './mask-date.directive';
-import { CurrencyFormatterDirective } from './currency-formatter.directive';
 
-const COMPONENTS = [
+export const COMPONENTS = [
   MapfreHeaderComponent,
   MapfreTabMenuComponent,
   MapfreItemAccordionComponent,
@@ -81,7 +79,4 @@ const COMPONENTS = [
   MapfreMenuComponent,
   MapfreTopListComponent,
   MapfreAutocompleteComponent,
-  MaskDateDirective,
-  CurrencyFormatterDirective,
-]
-export { COMPONENTS }
+];
