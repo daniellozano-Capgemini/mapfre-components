@@ -1,0 +1,17 @@
+<div class="df fd-col">
+  <label class="dmsans-m mapfre-mb-xxs" *ngIf="label">{{label | translate}}</label>
+  <div class="df fd-col">
+      <ng-select class="custom" [items]="options"
+                 [bindLabel]="nombre"
+                 [bindValue]="key"
+                 [placeholder]="placeholder | translate"
+                 [searchable]="searchable"
+                 [clearable]="clearable"
+                 [disabled]="disabled"
+                 [isOpen]="open"
+                 [(ngModel)]="valueSelected"
+                 [dropdownPosition]="dropdownPosition"
+                 (change)="onChange($event)">
+      </ng-select>
+  </div>
+</div>

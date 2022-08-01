@@ -1,0 +1,14 @@
+<div class="lib-mapfre-steps-container mapfre-p-sm df ai-c jc-sb mapfre-hide-desktop">
+  <span class="lib-mapfre-title dmsans-m mapfre-pr-sm">{{ title }}</span>
+  <div class="lib-mapfre-all-spinners mapfre-p-s mapfre-mr-xxs df ai-c jc-c">
+    <span class="lib-mapfre-current-text">{{ current }}<span class="lib-mapfre-step-text">/{{ steps }}</span> </span>
+    <mat-progress-spinner [diameter]="diameter" class="lib-mapfre-spinner-bg" [value]="100"></mat-progress-spinner>
+    <mat-progress-spinner [diameter]="diameter" class="lib-mapfre-spinner" [value]="value"></mat-progress-spinner>
+  </div>
+</div>
+
+<div *ngIf="stepperSteps" class="lib-mapfre-stepper-container mapfre-hide-mobile mapfre-hide-tablet">
+  <mat-stepper labelPosition="bottom" #stepper>
+    <mat-step editable="false" *ngFor="let step of stepperSteps" [completed]="step.selected" [label]="step.label"></mat-step>
+  </mat-stepper>
+</div>

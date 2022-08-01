@@ -1,0 +1,8 @@
+<button mat-icon-button [matMenuTriggerFor]="menu" class="lib-mapfre-select-menu-main-button">
+  <mat-icon>more_vert</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <button class="lib-mapfre-select-menu-button" mat-menu-item *ngFor="let menu of dataSelectMenu" (click)="onChange(menu)">
+    <span class="lib-mapfre-select-menu-title">{{menu.title}}</span>
+  </button>
+</mat-menu>

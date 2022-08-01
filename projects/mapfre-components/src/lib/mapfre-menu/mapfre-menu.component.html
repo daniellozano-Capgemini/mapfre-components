@@ -1,0 +1,29 @@
+<lib-mapfre-header head-fixed [user]="user" [isLogged]="isLogged" [hasClose]="true" (onClose)="closeMenu()"></lib-mapfre-header>
+
+<lib-mapfre-content>
+  <div *ngFor="let section of dataMenu">
+    <div *ngFor="let item of section?.items">
+      <mapfre-item-accordion [item]="item" (linkClicked)="onSelectedItem($event)" (titleClicked)="onSelectedTitle($event)" ></mapfre-item-accordion>
+    </div>
+    <hr class="section-line"/>
+    <ng-template [ngIf]="section?.links?.length">
+      <lib-mapfre-item [icon]="link?.icon" [title]="link?.title" *ngFor="let link of section?.links" (click)="onClickLink(link)"></lib-mapfre-item>
+    </ng-template>
+    <hr *ngIf="isLogged" class="section-line section-line--last">
+    <lib-mapfre-item *ngIf="isLogged" (click)="logout()" icon="flat-101-close-session" title="{{ 'menu.exit' | translate }}"
+      class="remove-arrow"></lib-mapfre-item>
+  </div>
+</lib-mapfre-content>
+<lib-mapfre-footer footer-menu>
+  <div class="footer">
+    <div class="links">
+      <span class="link" (click)="goToAcceptPolicies()">
+        {{ 'header.your.about' | translate }}
+      </span>
+    </div>
+    <div class="logo">
+      <img src="assets/imgs/mapfre-rojo-horizontal.svg" alt="Mapfre">
+    </div>
+  </div>
+</lib-mapfre-footer>
+

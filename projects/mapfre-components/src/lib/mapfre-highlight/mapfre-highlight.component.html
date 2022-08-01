@@ -1,0 +1,45 @@
+<div >
+  <lib-mapfre-card [highLight]="true" [class.no-shadow]="noShadow" [hasBorder]="hasBorder">
+    <div header>
+      <div class="highlight-header">
+        <h2 class="highlight-header-title" *ngIf="item.header">{{item.header}}</h2>
+        <h3 class="highlight-header-subtitle" *ngIf="item.subHeader">{{item.subHeader}}</h3>
+      </div>
+        <lib-mapfre-card-header [headerSectionType]="item?.type">
+      </lib-mapfre-card-header>
+    </div>
+    <div body class="mapfre-pl-s mapfre-pr-s">
+      <lib-mapfre-card-body>
+        <div mapfreCardAccount>
+          <div class="df grid jc-sb">
+            <div class="colum-left df fd-col jc-sb">
+              <div class="df ai-c">
+                <span class="title mapfre-fs-s-r">{{ item?.title }}</span>
+                <lib-mapfre-icon class="df mapfre-ml-xs" size="c16" *ngIf="item?.iconRight" [icon]="item?.iconRight"
+                  (click)="item?.iconRightHasClick ? onIconRightClick.emit() : '' "></lib-mapfre-icon>
+              </div>
+              <div>
+                <div class="mapfre-mt-s amount">
+                  <span
+                    *ngIf="+item.amount.value === 0 && item.textReplaceZeroAmount">{{item.textReplaceZeroAmount}}</span>
+                  <lib-mapfre-amount *ngIf="!item.textReplaceZeroAmount || (+item.amount.value > 0 &&
+                  item.textReplaceZeroAmount)"
+                    [amount]="item?.amount"
+                    class="dmsans-b"
+                    [size]="'big'"></lib-mapfre-amount>
+                </div>
+                <div class="date dmsans-r">{{ item?.date }}</div>
+              </div>
+            </div>
+            <div class="colum-right flex jc-e">
+              <ng-content select="[highlight]"></ng-content>
+            </div>
+          </div>
+          <div class="flex fd-col" [class.mapfre-mt-xxs]="item?.list?.length" *ngIf="item?.list">
+            <lib-mapfre-list [cssClass]="'background-transparent no-padding border-b-custom'" [dataList]="item?.list" [color]="false" [listType]="true" (click)="emitListInfoHandler($event)"></lib-mapfre-list>
+          </div>
+        </div>
+      </lib-mapfre-card-body>
+    </div>
+  </lib-mapfre-card>
+</div>

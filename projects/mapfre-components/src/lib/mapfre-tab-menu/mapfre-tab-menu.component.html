@@ -1,0 +1,9 @@
+<ul class="df">
+  <li class="df" *ngFor="let item of menu;">
+    <a class="df fd-col jc-sa ai-c mapfre-pt-s mapfre-pb-s pr" [routerLink]="[item.route]" routerLinkActive="active"
+       [routerLinkActiveOptions]="{ exact: true }">
+      <img class="icon" [src]="item.icon" alt="{{item.text}}">
+      <span class="t-upper">{{item.text}}</span>
+    </a>
+  </li>
+</ul>

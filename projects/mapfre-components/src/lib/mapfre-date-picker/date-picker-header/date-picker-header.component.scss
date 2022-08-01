@@ -1,0 +1,34 @@
+@import "../../assets/styles/functions";
+@import "../../assets/styles/reusables";
+
+.date-picker-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom,  var(--mapfre-date-picker-primary, #d81e05) 90%, var(--ion-color-white, #fff) 10%);
+    color: white;
+    flex-direction: column;
+    &__title {
+        font-size: em(12);
+    }
+    &__buttons {
+        font-size: em(12);
+        display: flex;
+    }
+    &__date {
+        font-size: em(23);
+        text-transform: capitalize;
+    }
+    &__toggle {
+        background-color: var(--mapfre-date-picker-white, #fff);
+        color: black;
+        font-size: em(14);
+        font-family: DMSansMedium;
+        width: 100%;
+        height: 55px;
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 20px;
+        text-transform: capitalize;
+    }
+}

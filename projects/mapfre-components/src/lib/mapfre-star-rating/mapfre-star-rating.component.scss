@@ -1,0 +1,36 @@
+.lib-mapfre-container {
+  margin-top: 0.438em;
+
+  .lib-mapfre-secondary-text {
+    color: var(--lib-color-title, #526570);
+    letter-spacing: 0.05px;
+  }
+
+  .lib-mapfre-red-icon {
+    color: var(--lib-mapfre-color-primary, #d81e05);
+    transform: scale(1.7);
+  }
+
+  .lib-mapfre-stars {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 2.375em;
+    margin-bottom: 3.375em;
+    color: var(--lib-color-text, #526570);
+    .star-primary {
+      color: var(--mapfre-color-primary, #d81e05);
+    }
+    .star-disable {
+      color: #9cb0bc;
+    }
+  }
+  .lib-mapfre-title {
+    font-family: DMSansBold;
+    font-size: 1em;
+    letter-spacing: 0.21px;
+    color: var(--lib-mapfre-dark-grey, #2d373d);
+    line-height: 1.55;
+    margin-bottom: 1.125em;
+  }
+}

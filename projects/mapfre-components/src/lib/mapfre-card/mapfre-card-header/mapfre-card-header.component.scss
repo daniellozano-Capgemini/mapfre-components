@@ -1,0 +1,130 @@
+@import '../../assets/styles/functions';
+
+$cornerSize: 8px;
+$rotateDeg: 135deg;
+$skewDeg: -45deg;
+$cornerTopPosition: 4px;
+$cornerLeftPosition: 4px;
+
+:host ::ng-deep {
+  .mapfre-card-header lib-mapfre-icon {
+    display: flex;
+  }
+}
+
+.size {
+  width: $cornerSize;
+  height: $cornerSize;
+  border-top-right-radius: 30%;
+}
+
+.mapfre-card-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  &.mapfre-card-header-with-corner {
+    padding-left: 12px;
+  }
+
+  &.custom-card-header {
+    margin: -8px -8px 0;
+    padding: 0.5rem 1rem;
+  }
+
+  // MAPFRE CARD HEADER CORNER
+  .mapfre-card-header-corner {
+    @extend .size;
+    position: absolute;
+    top: $cornerTopPosition;
+    left: $cornerLeftPosition;
+    transform: rotate(270deg);
+    &::after,
+    &::before {
+      @extend .size;
+      content: '';
+      position: absolute;
+      background-color: inherit;
+    }
+    &::after {
+      transform: rotate($rotateDeg) skewY($skewDeg) scale(0.707, 1.414) translate(50%);
+    }
+    &::before {
+      transform: rotate(-$rotateDeg) skewX($skewDeg) scale(1.414, 0.707) translate(0, -50%);
+    }
+    &.mapfre-card-header-corner-inversion {
+      background-color: var(--lib-mapfre-card-header-corner-inversion, #0ca6b3);
+    }
+    &.mapfre-card-header-corner-savings {
+      background-color: var(--lib-mapfre-card-header-corner-saving, #a51783);
+    }
+    &.mapfre-card-header-corner-pensions {
+      background-color: var(--lib-mapfre-card-header-corner-pensions, #f2a105);
+    }
+    &.mapfre-card-header-corner-rentFixed {
+      background-color: var(--lib-mapfre-card-header-corner-rent-variable, #00cc99);
+    }
+    &.mapfre-card-header-corner-rentVariable {
+      background-color: var(--lib-mapfre-card-header-corner-rent-fixed, #1adff0);
+    }
+  }
+
+  .mapfre-card-header-title-gdc {
+    padding: 2px 8px;
+    border-radius: 12px;
+    background-color: var(--lib-mapfre-card-info-update, #667985);
+    font-family: DMSansBold;
+    font-size: em(11px);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.45;
+    letter-spacing: 1px;
+    text-align: center;
+    color: var(--lib-color-text-white, #fff);
+  }
+
+  .mapfre-card-header-title-account {
+    font-family: DMSansRegular;
+    font-size: em(12px);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: 0.16px;
+    color: var(--lib-color-text-dark, #2d373d);
+  }
+
+  .mapfre-card-header-title {
+    font-family: DMSansBold;
+    font-size: 0.875rem;
+    letter-spacing: 0.18px;
+    line-height: 1.375rem;
+    color: var(--lib-color-text-dark, #2d373d);
+  }
+
+  .mapfre-card-header-title-white {
+    font-family: DMSansBold;
+    font-size: em(14px);
+    letter-spacing: 0.21px;
+    color: var(--lib-color-text-white, #ffffff);
+  }
+
+  .mapfre-block-header-bottom {
+    font-family: DMSansBold;
+    width: 100%;
+    .mapfre-card-header-number {
+      text-align: right;
+      font-size: em(20);
+      .mapfre-card-header-number-small {
+        font-size: em(12);
+      }
+    }
+  }
+  .mapfre-card-header-subtitle {
+    font-size: var(--lib-mapfre-header-subtitle, em(14px));
+    font-family: DMSansRegular;
+  }
+  .mapfre-grey-text {
+    color: var(--lib-mapfre-grey, #526570) !important;
+    font-family: DMSansBold;
+  }
+}

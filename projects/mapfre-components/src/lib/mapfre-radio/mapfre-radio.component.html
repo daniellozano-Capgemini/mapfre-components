@@ -1,0 +1,39 @@
+
+<div class="mapfre-mt-xxs mapfre-mb-xxs">
+  <label class="title dmsans-b">{{title}}</label>
+  <mat-radio-group class="mapfre-mt-s mapfre-mb-s flex fd-col" [required]="required" [labelPosition]="labelPosition">
+      <ng-template ngFor let-option [ngForOf]="optionsRadio" let-i="index">
+          <div (click)="option?.disabled ? '' : selectOption(option)" class="radio-item-line">
+            <mat-radio-button [disabled]="option?.disabled" [checked]="option?.checked" [value]="option" color="primary">
+              {{  option?.name }} {{ option?.detail?.description }}
+            </mat-radio-button>
+            <ng-template [ngIf]="option?.detail">
+              <div>
+                <mat-grid-list cols="3" rowHeight="50px">
+                  <mat-grid-tile class="content-left" colspan="2">     
+                    <span class="afin-icon afin-icon-customer-area mapfre-pr-xxs"></span> {{ option?.detail?.name | titlecase}}
+                  </mat-grid-tile>
+                  <mat-grid-tile class="dmsans-b" colspan="1" >
+                    {{ option?.detail?.money |currency:'EUR': true  }}
+                  </mat-grid-tile>
+                </mat-grid-list>
+                <mat-grid-list class="bg-grey mapfre-ml-s mapfre-mr-xxs" cols="3" rowHeight="25px">
+                  <mat-grid-tile  class="content-left dmsans-b" rowspan="1" colspan="2">
+                     {{ option?.detail?.accounts_name | titlecase}}
+                  </mat-grid-tile>
+                  
+                  <mat-grid-tile class="dmsans-b"  rowspan="2" colspan="1" >
+                    {{ option?.detail?.accounts_money |currency:'EUR': true }}
+                  </mat-grid-tile>
+                  <mat-grid-tile  class="content-left" rowspan="1" colspan="2">
+                    {{ option?.detail?.accounts_id }} 
+                  </mat-grid-tile>
+                </mat-grid-list>
+              </div>
+            </ng-template>
+          </div>
+      </ng-template>
+  </mat-radio-group>
+</div>
+
+

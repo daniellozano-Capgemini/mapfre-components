@@ -1,0 +1,80 @@
+@import "../assets/styles/functions";
+
+:host{
+  --lib-mapfre-grey: #526570;
+  --lib-mapfre-dark-grey: #2d373d;
+  --lib-mapfre-negative-red: #da2a2a;
+  --lib-mapfre-positive-green: #008c4b;
+  --lib-mapfre-dirty-white: #e8ebed;
+
+  .body{
+    border-top: 1px solid var(--lib-mapfre-dirty-white);
+  }
+  .container > div{
+    padding: em(8px) 0;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr 0.4fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    align-items: center;
+    grid-template-areas:
+      "value pg currency"
+      "value-number pg-number currency-value";
+
+    border-top: 1px, solid, var(--lib-mapfre-grey);
+
+    .value {
+      font-size: em(16px);
+      color: var(--lib-mapfre-grey);
+      grid-area: value;
+    }
+
+    .value-number {
+      font-size: em(20px);
+      color: var(--lib-mapfre-dark-grey);
+      grid-area: value-number;
+      .value-number-small{
+        font-size: em(14px);
+      }
+    }
+
+    .pg {
+      font-size: em(16px);
+      color: var(--lib-mapfre-grey);
+      grid-area: pg;
+    }
+
+    .pg-number {
+      font-size: em(20px);
+      color: var(--lib-mapfre-dark-grey);
+      grid-area: pg-number;
+      .pg-small{
+        font-size: em(14px);
+      }
+    }
+
+    .currency {
+      font-size: em(16px);
+      color: var(--lib-mapfre-grey);
+      grid-area: currency;
+    }
+
+    .currency-value {
+      font-size: em(20px);
+      color: var(--lib-mapfre-dark-grey);
+      grid-area: currency-value;
+    }
+  }
+
+  .negative{
+    color: var(--lib-mapfre-negative-red) !important;
+  }
+
+  .positive{
+    color: var(--lib-mapfre-positive-green) !important;
+  }
+}

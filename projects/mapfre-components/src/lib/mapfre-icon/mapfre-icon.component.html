@@ -1,0 +1,5 @@
+<span *ngIf="icon !== '€' && icon !== '$'" class="afin-icon afin-icon-{{ icon + ' ' + size }}  {{customClass}}">
+    <ng-content select="[notification]"></ng-content>
+</span>
+<span *ngIf="icon === '€'" class="currency">{{icon}}</span>
+<span *ngIf="icon === '$'" class="currency">{{icon}}</span>

@@ -1,0 +1,58 @@
+@import '../assets/styles/reusables.scss';
+
+.mapfre-card {
+  .mat-card {
+    padding: 0;
+    box-shadow: none;
+  }
+  .highlight-card {
+    background-color: #e8ebed;
+  }
+  .mapfre-card-wrapper {
+    font-family: DMSansMedium;
+    height: var(--lib-mapfre-card-wrapper-height);
+    padding: var(--lib-mapfre-card-wrapper-padding, 8px);
+  }
+}
+
+::ng-deep {
+  lib-mapfre-card {
+    display: flex;
+    flex: 0 0 100%;
+    width: 100%;
+    flex-flow: column;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px 0 var(--lib-mapfre-card-shadow, rgba(82, 101, 112, 0.15));
+
+    &.has-border {
+      border: solid 1px var(--lib-color-mapfre-grey, #e8ebed);
+    }
+
+    &.custom-card {
+      box-shadow: none;
+      .mapfre-card-header {
+        background: var(--lib-color-mapfre-grey, #e8ebed);
+        padding: 12px 15px;
+      }
+    }
+
+    // Se añaden clases de utilidad genéricas para cumplir diseño
+    // si alguna no se adapta, se puede intrudcir como style en linea:
+    // style="--lib-mapfre-card-wrapper-padding: 16px 8px;"
+    // en uso de etiqueta <lib-mapfre-card>
+    &.padding-xs {
+      --lib-mapfre-card-wrapper-padding: 0.5rem 0.5rem;
+    }
+    &.padding-sm {
+      --lib-mapfre-card-wrapper-padding: 1rem 0.5rem;
+    }
+  }
+  lib-mapfre-card + lib-mapfre-card {
+    margin-top: 1rem;
+  }
+  .no-products {
+    lib-mapfre-card + lib-mapfre-card {
+      margin-top: 0.5rem;
+    }
+  }
+}

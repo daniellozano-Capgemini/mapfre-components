@@ -1,0 +1,21 @@
+:host {
+  .lib-mapfre-select-menu-main-button {
+    background-color: transparent;
+    .mat-icon {
+      color: var(--lib-color-icon, #2D373D);
+    }
+  }
+  .lib-mapfre-select-menu-button {
+    border-bottom: 1px solid var(--lib-color-menu-border, #e8ebed);
+    &:last-child {
+      border-bottom: none;
+    }
+    .lib-mapfre-select-menu-title {
+      font-size: 16px;
+      font-family: DMSansMedium;
+      line-height: 1.5;
+      letter-spacing: 0.21px;
+      color: var(--lib-color-menu-title, #526570);
+    }
+  }
+}

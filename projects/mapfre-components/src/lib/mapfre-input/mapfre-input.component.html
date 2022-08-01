@@ -1,0 +1,34 @@
+<div class="df fd-col">
+  <label class="dmsans-m mapfre-mb-xxs" *ngIf="label">{{label}}</label>
+  <div class="df pr">
+    <lib-mapfre-icon [style.--lib-color-icon]="iconColor" class="pa left" *ngIf="icon && iconPlace === 'left'"
+                     (click)="!disabled && onIconClick($event)" icon="{{icon}}" size="m"></lib-mapfre-icon>
+    <input #nativeInput *ngIf="type != 'select' && !autocomplete" class="dmsans-m mapfre-p-s fg-1" [type]="nativeInputType" [value]="val"
+           [disabled]="disabled"
+           (keydown)="onKeydown($event)"
+           (focus)="focus($event)"
+           (blur)="onDataChanged($event)"
+           [readonly]="readonly" [required]="required" [placeholder]="placeholder"
+           (input)="onInput($event)"
+           [ngClass]="iconPlace === 'right' ? 'icon-right' : 'icon-left'"
+           [attr.inputmode]="inputMode">
+
+    <input #nativeInput *ngIf="type != 'select' && autocomplete" class="dmsans-m mapfre-p-s fg-1" [type]="nativeInputType" [value]="val"
+           [disabled]="disabled" [readonly]="readonly"
+           (focus)="focus($event)"
+           (blur)="onDataChanged($event)"
+           [matAutocomplete]="autocomplete"
+           [required]="required" [placeholder]="placeholder"
+           (input)="onInput($event)"
+           [ngClass]="iconPlace === 'right' ? 'icon-right' : 'icon-left'"
+           [attr.inputmode]="inputMode">
+
+    <input *ngIf="type === 'select'" class="dmsans-m mapfre-p-s fg-1" [type]="nativeInputType" [value]="val?.value"
+           [disabled]="disabled" [readonly]="readonly" [required]="required" [placeholder]="placeholder"
+           (input)="onInput($event)"
+           [ngClass]="iconPlace === 'right' ? 'icon-right' : 'icon-left'">
+
+    <lib-mapfre-icon [style.--lib-color-icon]="iconColor" class="pa right" *ngIf="icon && iconPlace === 'right'"
+                     (click)="!disabled && onIconClick($event)" icon="{{icon}}" size="m"></lib-mapfre-icon>
+  </div>
+</div>

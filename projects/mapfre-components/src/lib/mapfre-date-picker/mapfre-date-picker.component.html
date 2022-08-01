@@ -1,0 +1,30 @@
+<div>
+  <form *ngIf="formGroup" [formGroup]="formGroup" autoFocused id="formGroup">
+    <mat-form-field [ngClass]="{
+      'datepicker-no-padding' : noPadding,
+      'datepicker-padding16' : padding16,
+      'datepicker-padding8' : padding8
+    }" [appearance]="opts?.appearance">
+      <input libMaskDate [disabled]="disabled" formControlName="date" [max]="maxDate" [min]="minDate"
+        (dateChange)="onChangeDate($event)" (change)="onChange($event)" (dateInput)="onDateInput($event)" matInput
+        [matDatepicker]="datepicker" [placeholder]="placeholder ? placeholder : ''  || opts?.placeholder ? opts?.placeholder : ''">
+      <mat-datepicker-toggle matSuffix [for]="datepicker" (click)="openCalendar()">
+        <lib-mapfre-icon matDatepickerToggleIcon [icon]="opts?.icon" [size]="opts?.size"></lib-mapfre-icon>
+      </mat-datepicker-toggle>
+      <mat-datepicker [disabled]="disabled" touchUi #datepicker panelClass="mapfre-date-picker"
+        [calendarHeaderComponent]="datePickerHeader">
+      </mat-datepicker>
+    </mat-form-field>
+  </form>
+  </div>
+
+  <div style="display: none">
+    <div class="datepicker-footer" #datepickerFooter>
+      <button class="button-calendar" mat-raised-button (click)="cancel()">
+        {{opts?.cancelButton?.text | translate}}
+      </button>
+      <button class="button-calendar" mat-raised-button (click)="success()">
+        {{opts?.acceptButton?.text| translate}}
+      </button>
+    </div>
+  </div>

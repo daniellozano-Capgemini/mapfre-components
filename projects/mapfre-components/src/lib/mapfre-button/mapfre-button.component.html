@@ -1,0 +1,13 @@
+<div class="lib-mapfre-button-wrapper">
+  <div class="lib-mapfre-container">
+    <div class="lib-mapfre-button">
+      <lib-mapfre-icon class="mapfre-pr-xxs" *ngIf="icon && iconPosition === 'left'" [size]="iconSize" [icon]="icon"></lib-mapfre-icon>
+      {{ title | translate }}
+      <span class="lib-mapfre-number-bg" *ngIf="number">
+        <span class="lib-mapfre-badge">{{ number }}</span>
+      </span>
+      <lib-mapfre-icon class="mapfre-pl-xxs" *ngIf="icon && iconPosition === 'right'" [size]="iconSize"  [icon]="icon"></lib-mapfre-icon>
+      <ng-content select="[contentButton]"></ng-content>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="mapfre__header df ai-c">
+  <!-- Default template -->
+  <ng-template [ngIf]="!user" [ngIfElse]="userTemplate">
+    <div class="mapfre__header--info df ai-c fg-1">
+      <lib-mapfre-icon *ngIf="onBack" icon="strong-arrow-left" size="l" (click)="goBack()" class="fix-horizontal-align lib-mapfre-arrow mapfre-mr-s"></lib-mapfre-icon>
+      <lib-mapfre-icon *ngIf="onBackFunction" icon="strong-arrow-left" size="l" (click)="goBackFunction()" class="fix-horizontal-align lib-mapfre-arrow mapfre-mr-s"></lib-mapfre-icon>
+      <span class="title dmsans-m" *ngIf="title">{{title}}</span>
+      <ng-container *ngFor="let img of imgSrc; let i = index">
+        <img class="brand" alt="Brand logo" [src]="img" [class.mapfre-ml-s]="i > 0"/>
+      </ng-container>
+    </div>
+  </ng-template>
+
+  <!-- User template -->
+  <ng-template #userTemplate>
+    <div class="mapfre__header--info df ai-c fg-1 jc-sb">
+      <div class="user df ai-c" *ngIf="isLogged">
+        <div class="user--oval df ai-c jc-c dmsans-m"><span>{{userAlias}}</span></div>
+        <div class="user--name df fd-col fg-1">
+          <span *ngIf="user?.name">{{user?.name | titlecase }} <span *ngIf="user?.surname" class="mapfre-hide-mobile">{{user?.surname | titlecase }}</span></span>
+          <span class="mapfre-hide-desktop mapfre-hide-tablet" *ngIf="user?.surname">{{user?.surname | titlecase }}</span>
+        </div>
+      </div>
+
+      <!-- Profile button -->
+      <span class="profile-button dmsans-b mapfre-ml-s mapfre-mr-sm mapfre-pt-xxs mapfre-pb-xxs mapfre-pl-sm mapfre-pr-sm pr"
+            [class.state-has-notification]="user?.profilePage?.showNotification"
+            *ngIf="user?.profilePage?.text && user?.profilePage?.route && isLogged"
+            (click)="onProfileClick(user?.profilePage?.route)">
+        {{user?.profilePage?.text || 'Profile'}}
+      </span>
+    </div>
+  </ng-template>
+
+  <!-- Action controls -->
+    <div class="mapfre__header--action df mapfre-ml-s" *ngIf="hasClose || !this.hideMenu">
+      <img src="./assets/icon-nav-close.svg" alt="Close" *ngIf="hasClose" (click)="close()">
+      <img src="./assets/icon-nav-menu-burguer.svg" alt="Open menu" *ngIf="this.onMenu.observers.length > 0 && !this.hideMenu"
+           (click)="emitMenu($event)">
+    </div>
+    <div *ngIf="hasHelpImage" class="mapfre__header--action df mapfre-ml-s">
+      <img src="./assets/icon-general-user-help.svg" alt="Help image" (click)="goToFaqs()">
+    </div>
+</div>

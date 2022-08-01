@@ -1,0 +1,36 @@
+@import '../assets/styles/functions';
+@import '../assets/styles/reusables';
+
+.alert-message-wrapper {
+  border-radius: 4px;
+  background-color: var(--lib-color-alert-message-bg, #e8ebed);
+  color: var(--lib-color-alert-message-text, #2d373d);
+  font-family: DMSansRegular;
+  font-size: 0.875rem;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: 0.18px;
+  .alert-message-link {
+    font-size: 0.875rem;
+    color: var(--lib-color-alert-message-text, #2d373d);
+  }
+  .no-mb {
+    margin-bottom: 0;
+  }
+}
+.alert-message-background {
+  background-color: var(--lib-color-alert-message-warn-bg, #ffd2b3);
+  border-radius: 4px;
+}
+
+::ng-deep {
+  .read-more-button {
+    button {
+      font-size: 16px;
+      font-family: DMSansMedium;
+    }
+  }
+  .no-pl-button-link-dark {
+    padding-left: 0;
+  }
+}

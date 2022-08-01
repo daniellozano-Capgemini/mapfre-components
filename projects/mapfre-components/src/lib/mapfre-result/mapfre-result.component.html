@@ -1,0 +1,29 @@
+<div class="custom-result">
+  <div class="custom-result-content">
+    <div class="result-content">
+      <ng-container *ngFor="let v of data?.values">
+        <span [class]="v?.icon" *ngIf="v?.type === 'img'"></span>
+        <p [class]="v?.class" *ngIf="v?.type === 'p'" [innerHtml]="v?.value"></p>
+        <div class="buttons-content" *ngIf="v?.type === 'button'" >
+          <button lib-mapfre-button [title]="v?.value" [type]="v?.typeButton" [expand]="v?.expand"
+          (click)="goTo(v?.link, v?.state , v?.onClick)" [icon]="v?.icon"></button>
+        </div>
+        <lib-mapfre-alert-message *ngIf="v?.type === 'info'" [dataAlertMessage]="v" [colorAlertMessage]="v?.colorAlertMessage">
+          <button lib-mapfre-button buttons class="button" [title]="button?.title" [type]="button?.type" [icon]="button?.icon" *ngFor="let button of v?.buttons"></button>
+        </lib-mapfre-alert-message>
+      </ng-container>
+    </div>
+    <div class="buttons-result" *ngIf="!data?.isEmbedded" class="{{data?.actions?.class}}">
+      <button lib-mapfre-button
+        *ngFor="let button of data?.actions?.buttons"
+        class="{{button?.class}}"
+        [title]="button?.text"
+        [type]="button?.type"
+        [icon]="button?.icon"
+        [iconSize]="button?.iconSize"
+        [iconPosition]="button?.iconPosition"
+        [expand]="button?.expand"
+        (click)="goTo(button?.link, button?.state, button?.onClick)"></button>
+    </div>
+  </div>
+</div>

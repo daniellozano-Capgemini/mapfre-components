@@ -1,0 +1,9 @@
+<div [ngClass]="!icon && !title && !description ? 'df jc-sb ac-c ai-c w-100 grid-column-gap mapfre-pt-xxs mapfre-pb-xxs list-card-account' : 'lib-mapfre-container'">
+  <lib-mapfre-icon *ngIf="icon" icon="{{ icon }}" size="m" class="lib-mapfre-icon">
+    <span *ngIf="notification" notification class="point-red pa"></span>
+  </lib-mapfre-icon>
+  <span *ngIf="title" class="lib-mapfre-title mapfre-pl-sm dmsans-m">{{ title }}</span>
+  <span *ngIf="description" class="lib-mapfre-description mapfre-pl-sm dmsans-m">{{ description }}</span>
+  <ng-content class="lib-mapfre-card" select="[cardItem]"></ng-content>
+  <lib-mapfre-icon *ngIf="iconNavigate" icon="strong-arrow-right" size="m" (click)="onClick()" class="lib-mapfre-arrow"></lib-mapfre-icon>
+</div>

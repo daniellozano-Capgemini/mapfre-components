@@ -1,0 +1,9 @@
+<mat-button-toggle-group>
+  <mat-button-toggle *ngFor="let button of dataButtonToggle"
+  checked={{button?.selected}}
+  (click)="onChange(button)"
+  class="{{ button?.icon ? 'withIcon' : '' }}">
+    <lib-mapfre-icon class="icon-color" *ngIf="button?.icon" [icon]="button?.icon" [size]="button?.iconSize || iconSize"></lib-mapfre-icon>
+    {{button?.title}}
+  </mat-button-toggle>
+</mat-button-toggle-group>

@@ -1,0 +1,57 @@
+@import "../assets/styles/functions";
+@import "../assets/styles/reusables";
+
+:host {
+  --lib-color-text-progress: #FFFFFF;
+  --lib-color-text-objective: #2D373D;
+  --lib-color-background: #D2D4CF;
+  --lib-color-background-progress: #526570;
+
+  div {
+    background-color: var(--lib-color-background);
+    min-height: 17px;
+
+    span {
+      font-size: em(12);
+      line-height: em(18);
+      letter-spacing: .7px;
+    }
+
+    .progress {
+      min-width: fit-content;
+      max-width: 100%;
+
+      .icon {
+        z-index: 1;
+        display: inline-block;
+        width: auto;
+        height: 90%;
+        max-height: 20px;
+      }
+
+      span {
+        color: var(--lib-color-text-progress);
+        z-index: 1;
+      }
+    }
+
+    .objective {
+      color: var(--lib-color-text-objective);
+      z-index: 1;
+    }
+
+    // Completed progress state.
+    &::after {
+      position: absolute;
+      display: block;
+      content: '';
+      top: 0;
+      left: 0;
+      width: var(--progress-width);
+      max-width: 100%;
+      min-width: 2%;
+      height: 100%;
+      background-color: var(--lib-color-background-progress);
+    }
+  }
+}

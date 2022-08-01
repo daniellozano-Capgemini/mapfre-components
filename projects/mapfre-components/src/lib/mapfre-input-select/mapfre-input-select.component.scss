@@ -1,0 +1,154 @@
+@import '../assets/styles/functions';
+@import '../assets/styles/mixins';
+@import '../assets/styles/reusables';
+@import './src/theme/fonts/_mapfre-icons-variables';
+
+:host {
+  --lib-color-border: #cccfd2;
+  --lib-color-border-active: #9cb0bc;
+
+  --lib-color-input-background: #ffffff;
+
+  --lib-color-text: #526570;
+  --lib-color-text-selected: #2d373d;
+
+  --lib-color-background-option: #ffffff;
+  --lib-color-background-option-selected: #9cb0bc;
+
+  position: relative;
+  ::ng-deep .ng-dropdown-panel {
+    border: 0;
+    top: rem(39);
+    .ng-dropdown-panel-items{
+      border-bottom-right-radius: rem(4);
+      border-bottom-left-radius: rem(4);
+      border-bottom-color: var(--lib-color-border);
+      margin-bottom: -1px;
+      background-color: var(--lib-color-input-background);
+      border: 1px solid var(--lib-color-border);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+    }
+  }
+
+  label {
+    color: var(--lib-color-text);
+    font-size: rem(14);
+  }
+
+  ::ng-deep .ng-select.custom {
+    .ng-select-container {
+      border-radius: rem(2);
+      border: solid 1px var(--lib-color-border);
+      background-color: var(--lib-color-input-background);
+      height: rem(40);
+
+      &:hover {
+        box-shadow: none;
+      }
+      .ng-value-container {
+        padding-left: rem(8);
+        .ng-placeholder {
+          font-family: DMSansRegular;
+          font-size: rem(16);
+          line-height: 1.5;
+          letter-spacing: 0.21px;
+          color: var(--lib-mapfre-grey, #667985);
+        }
+        .ng-value-label {
+          font-family: DMSansMedium;
+          font-size: rem(16);
+          color: var(--lib-mapfre-grey, #667985);
+          line-height: 1.5;
+          letter-spacing: 0.21px;
+        }
+      }
+      .ng-arrow-wrapper {
+        width: rem(24);
+        height: rem(24);
+      }
+      &.ng-has-value {
+        .ng-value-container {
+          .ng-value-label {
+            color: var(--lib-color-text, #526570);
+          }
+        }
+      }
+      .ng-arrow-wrapper {
+        width: rem(24);
+        height: rem(24);
+        margin-right: rem(8);
+        padding-right: 0;
+        .ng-arrow {
+          right: 0;
+        }
+      }
+    }
+
+    &.ng-select-opened {
+      .ng-select-container {
+        border-color: var(--lib-color-border-active);
+      }
+      .ng-arrow {
+        transform: scaleY(-1);
+      }
+    }
+
+    &.ng-select-focused {
+      &:not(.ng-select-opened) > .ng-select-container {
+        border-color: var(--lib-color-border-active);
+        box-shadow: none;
+      }
+    }
+    .ng-arrow {
+      font-family: 'AFINIcons' !important;
+      speak: never;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+
+      // Better Font Rendering
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+
+      border: 0;
+      font-size: rem(24);
+      position: relative;
+      width: rem(24);
+      height: rem(24);
+      top: 0;
+      right: rem(6);
+      &::before {
+        content: $afin-icon-simple-arrow-down;
+      }
+    }
+  }
+}
+
+::ng-deep {
+  .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+    font-size: rem(14);
+    line-height: 1.71;
+    letter-spacing: 0.18px;
+    color: var(--lib-color-text, #526570);
+    min-height: rem(40);
+    font-family: DMSansRegular;
+  }
+  .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected .ng-option-label,
+  .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected.ng-option-marked .ng-option-label {
+    font-size: rem(14);
+    font-weight: normal;
+    line-height: 1.14;
+    letter-spacing: 0.18px;
+    color: var(--lib-color-text, #526570);
+  }
+  .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-marked {
+    color: var(--lib-color-text, #526570);
+    background-color: #f5f6f7;
+  }
+  .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected,
+  .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected.ng-option-marked {
+    background-color: #9cb0bc;
+  }
+}

@@ -1,0 +1,8 @@
+<div class="lib-mapfre-container">
+  <div class="lib-mapfre-item" *ngFor="let item of items; let i = index">
+    <span class="lib-mapfre-number dmsans-r">{{ i + 1 }}</span>
+    <span class="lib-mapfre-head">{{ 'pension.distribucion.top.type' | translate }}</span>
+    <span class="lib-mapfre-title dmsans-b">{{ item?.title }}</span>
+    <span class="lib-mapfre-percentage">{{ item?.percent }}%</span>
+  </div>
+</div>

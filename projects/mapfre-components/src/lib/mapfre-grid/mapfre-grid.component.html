@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="value">{{ card?.value }}</div>
+  <div class="value-number">{{ dataHtml?.value }}<span class="value-number-small">,{{ card?.valueNumberSmall }}</span></div>
+  <div class="pg">{{ card?.pg }}</div>
+  <div class="pg-number" [ngClass]="totalValueNumber > 0 ? 'positive' : 'negative'">{{ card?.pgNumber }}<span class="pg-small">,{{ card?.pgNumberSmall }}</span></div>
+  <div class="currency">{{ card?.currency }}</div>
+  <div class="currency-value">{{ card?.currencyValue }}</div>
+</div>

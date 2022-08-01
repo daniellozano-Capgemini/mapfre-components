@@ -1,0 +1,45 @@
+<div class="list {{ cssClass }}" [ngClass]="{'list-border' : border, 'color-grey-box' : color}">
+  <ng-content select="[title]"></ng-content>
+  <div [ngClass]="{'list-type' : listType}">
+    <mat-list *ngIf="dataList" [ngClass]="{'color-grey-box' : color}">
+      <mat-list-item *ngFor="let element of dataList; let i = index">
+        <div class="wrapper-list" [ngClass]="{'bg-alert' : element?.type === 'alert'}">
+          <span class="list-key" *ngIf="element?.key">{{element?.key | translate}}</span>
+          <div [ngClass]="{'align-elements jc-sb w-100' : listType, 'border-t' : dataList.length === 1 && listType, 'mapfre-p-s' : !listType && !color, 'mapfre-pt-s mapfre-pb-s' : !listType && color}">
+            <p class="list-title">{{element?.title}}</p>
+            <div *ngIf="element?.cssClass === 'tr-positive' || element?.cssClass === 'tr-negative';
+              then triangle
+              else valueList">
+            </div>
+            <ng-template #valueList>
+              <p class="list-value df"  *ngIf="validateTypeValue(element?.value, i)">
+                {{ element?.type ==='secret' ? formatSecretValue(element?.value): element?.value }}
+                <lib-mapfre-icon *ngIf="element?.info" class="icon-info mapfre-ml-s" icon="info" size="m" (click)="emitListInfoHandler($event)"></lib-mapfre-icon>
+              </p>
+            </ng-template>
+            <ng-template #triangle>
+              <p *ngIf="validateTypeValue(element?.value, i)" class="list-value df mapfre-mr-sm-imp" [ngClass]="((element?.cssClass === 'tr-positive' || 'tr-negative') ? isPositive(element) : null)">
+                {{ element?.type ==='secret' ? formatSecretValue(element?.value): element?.value }}
+                <lib-mapfre-icon *ngIf="element?.info" class="icon-info mapfre-ml-s" icon="info" size="m" (click)="emitListInfoHandler($event)"></lib-mapfre-icon>
+                <span *ngIf="element?.cssClass === 'tr-positive' || 'tr-negative'" [class]="element?.cssClass"></span>
+              </p>
+            </ng-template>
+
+            <div *ngIf="!validateTypeValue(element?.value, i)">
+              <p class="list-value {{element?.cssClass}}" *ngFor="let value of element?.values">
+                {{ element?.type ==='secret' ? formatSecretValue(value): value }}
+              </p>
+            </div>
+            <div class="list-value dmsans-m" *ngIf="element?.amount">
+              <lib-mapfre-amount
+                [ngClass]="isProfitOrLoss(element)"
+                [amount]="element?.amount"
+              ></lib-mapfre-amount>
+            </div>
+          </div>
+          <button lib-mapfre-button *ngIf="element?.button" [title]="element?.button?.title" [type]="element?.button?.type" (click)="onClickButton()"></button>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>

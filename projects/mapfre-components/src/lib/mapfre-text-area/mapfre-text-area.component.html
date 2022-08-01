@@ -1,0 +1,8 @@
+
+  <!-- <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label *ngIf="title">{{ title }}</mat-label>
+    <textarea matInput [placeholder]="placeholder"></textarea>
+  </mat-form-field> -->
+  <div class="df fd-col">
+    <textarea (input)="onInput()" [(ngModel)]="textAreaValue" [placeholder]="placeholder"  name="" id="" cols="30" [rows]="rows"></textarea>
+  </div>

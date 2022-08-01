@@ -1,0 +1,25 @@
+<div class="custom-alert">
+  <div class="horizontal" *ngIf="!data?.config?.hideButtonClose">
+    <lib-mapfre-icon icon="close" size="m" (click)="onNoClick()" customClass="dmsans-b"></lib-mapfre-icon>
+  </div>
+  <div mat-dialog-content>
+    <ng-container *ngFor="let v of data?.values">
+      <span [class]="v?.icon" *ngIf="v?.type === 'img'"></span>
+      <p [class]="v?.class" *ngIf="v?.type === 'p'"> <span class="check" *ngIf="v?.check">
+          <lib-mapfre-icon icon="check" size="m"></lib-mapfre-icon>
+        </span>{{v?.value}}</p>
+      <div class="info" *ngIf="v?.type === 'info'">
+        <lib-mapfre-icon class="image-info" icon="info" size="s"></lib-mapfre-icon>
+        <div (click)="goTo(v?.link, v?.state); onNoClick()" [innerHtml]="v?.value"></div>
+      </div>
+    </ng-container>
+    <div mat-dialog-actions class="{{data?.actions?.class}}" *ngIf="data?.actions?.buttons?.length">
+      <div *ngFor="let button of data?.actions?.buttons">
+        <button lib-mapfre-button *ngIf="button?.text" [title]="button?.text" [type]="button?.type" [disabled]="button?.disabled"
+          [class]="button?.class" (click)="button?.handler(); onNoClick()" [icon]="button?.icon" [iconPosition]="button?.iconPosition"
+        ></button>
+        <span *ngIf="button?.value" [class]="button?.class">{{button?.value}}</span>
+      </div>
+    </div>
+  </div>
+</div>

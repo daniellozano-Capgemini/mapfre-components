@@ -1,0 +1,76 @@
+@import '../../assets/styles/functions';
+
+.flex-space {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mapfre-card-body{
+  font-family: DMSansMedium;
+  ::ng-deep {
+    .mapfre-card-account-info{
+      @extend .flex-space;
+      align-items: center;
+      .mapfre-card-account-info-update{
+        font-size: em(12px);
+        font-family: DMSansBold;
+        color: var(--lib-mapfre-card-info-update, #667985);
+        .mapfre-card-account-info-update-date{
+          font-weight: DMSansMedium;
+        }
+      }
+      .mapfre-card-account-info-total{
+        .mapfre-card-account-info-total-amount{
+          font-size: em(24px);
+          .mapfre-card-account-info-total-currency{
+            font-size: em(16px);
+          }
+        }
+      }
+    }
+    .mapfre-card-account-summary{
+      @extend .flex-space;
+      margin-top: em(10px);
+      border-radius: em(4px);
+      background-color: var(--lib-mapfre-card-account-summary-bg, #e8ebed);
+      padding: 0.356rem 1rem;
+      .mapfre-card-account-summary-text{
+        color: var(--lib-mapfre-grey, #667985);
+        font-size: em(12px);
+        font-family: DMSansMedium;
+        letter-spacing: 0.16px;
+      }
+      .mapfre-card-account-summary-amount{
+        font-size: em(14px);
+        color: var(--lib-mapfre-color-dark-grey, #526570);
+      }
+    }
+    .mapfre-card-account-efective {
+      margin-top: 10px;
+      border-radius: 4px;
+      background-color: var(--lib-mapfre-card-account-summary-bg, #e8ebed);
+      padding: 7px 15px;
+      .mapfre-card-account-efective-text {
+        font-size: em(14px);
+        font-family: DMSansMedium;
+        line-height: 1.43;
+        letter-spacing: 0.18px;
+        color: var(--lib-color-title-grey, #526570);
+      }
+      .mapfre-card-account-efective-number-account {
+        font-family: DMSansRegular;
+        font-size: em(12px);
+        line-height: 1.33;
+        letter-spacing: 0.16px;
+        color: var(--lib-mapfre-grey, #667985);
+      }
+      .mapfre-card-account-efective-balance {
+        font-family: DMSansMedium;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.21px;
+        color: var(--lib-color-title-grey, #526570);
+      }
+    }
+  }
+}

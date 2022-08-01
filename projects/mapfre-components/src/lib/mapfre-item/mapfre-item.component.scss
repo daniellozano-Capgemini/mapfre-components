@@ -1,0 +1,50 @@
+@import '../assets/styles/functions';
+@import '../assets/styles/reusables';
+
+.list-card-account {
+  border-bottom: solid 1px var(--lib-color-mapfre-grey, #e8ebed);
+}
+
+.lib-mapfre-container {
+  display: grid;
+  grid-template-columns: var(--lib-mapfre-item-gridt-columns, 0.1fr 1fr 0.1fr);
+  grid-template-rows: var(--lib-mapfre-item-gridt-rows, 0fr 1fr);
+  gap: 0px 0px;
+  grid-template-areas:
+    'lib-mapfre-icon lib-mapfre-title lib-mapfre-arrow'
+    '. lib-mapfre-description .';
+  align-items: center;
+  font-family: DMSansMedium;
+  color: var(--lib-mapfre-light-gray, #526570);
+
+  .lib-mapfre-icon {
+    grid-area: lib-mapfre-icon;
+    margin-right: 1rem;
+  }
+
+  .point-red {
+    width: 5px;
+    height: 5px;
+    background-color: var(--lib-color-mapfre-primary, #d81e05);
+    border-radius: 50%;
+  }
+
+  .lib-mapfre-title {
+    grid-area: lib-mapfre-title;
+    line-height: em(24px);
+    font-size: var(--lib-mapfre-item-fsize, em(18px));
+    font-family: DMSansMedium;
+  }
+
+  .lib-mapfre-description {
+    grid-area: lib-mapfre-description;
+    line-height: 20px;
+    font-size: em(14px);
+    font-family: DMSansRegular;
+  }
+
+  .lib-mapfre-arrow {
+    grid-area: lib-mapfre-arrow;
+    margin: auto;
+  }
+}

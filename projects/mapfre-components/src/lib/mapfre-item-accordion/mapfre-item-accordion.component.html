@@ -1,0 +1,44 @@
+<cdk-accordion>
+  <cdk-accordion-item #accordionItem="cdkAccordionItem" role="button" tabindex="0" [attr.aria-expanded]="item?.collapse"
+    aria-controls="accordion-body">
+    <div [ngClass]="item.titleButton ? 'accordion-item-header-link' : 'accordion-item-header'"
+      (click)="!item.titleButton || item?.itemRight ? itemToggle($event) : ''">
+      <div class="left-header-container">
+        <lib-mapfre-icon *ngIf="item?.itemLeft" icon="{{item?.itemLeft}}" size="m"></lib-mapfre-icon>
+        <span class="title" *ngIf="!item?.titleButton" [ngClass]="item.collapse ? '' : 'dmsans-b'">{{ item?.title
+          }}</span>
+        <button lib-mapfre-button *ngIf="item?.titleButton" [title]="item?.title" [type]="'link-underline'"
+          [class]="!item.buttonInfo ? '' : 'valoracion-button'"
+          (click)="onClickButton()"></button>
+      </div>
+      <div>
+        <span class="icon-right">
+          <lib-mapfre-icon [ngClass]="!item.collapse ? 'collapsable' : ''"
+            (click)="!item.titleButton ? itemToggle($event) : onClickIcon()" icon="{{item?.itemRight}}" size="m">
+          </lib-mapfre-icon>
+        </span>
+      </div>
+    </div>
+    <div *ngIf="item?.subtitle || item?.dataList" [ngClass]="{
+        'collapsed' : !item?.collapse && !collapsable
+      }" class="accordion-item-body" role="region" aria-labelledby='accordion-header'>
+      <ng-container *ngIf="item?.subtitle?.length">
+        <div *ngFor="let element of item?.subtitle" class="accordion-subtitle-list">
+          <lib-mapfre-icon class="item-icon mb-0" *ngIf="element?.icon" icon="{{element?.icon}}" size="m"></lib-mapfre-icon>
+          <p *ngIf="element?.icon !== 'general-user-email'" class="mb-0" [ngClass]="element?.icon === 'phone' ? 'accordion-link' : 'item-link'" (click)="onClickLink(element)" [innerHTML]="element?.title"></p>
+          <a  class="accordion-link mb-0" *ngIf="element?.icon === 'general-user-email'" href="mailto:{{element?.title?.trim()}}" target="_top">{{element?.title}}</a>
+        </div>
+      </ng-container>
+      <ng-content select="[list]"></ng-content>
+    </div>
+    <div *ngIf="item?.description" class="accordion-item-body" role="region" [ngClass]="{
+      'collapsed' : !item?.collapse && !collapsable
+      }" aria-labelledby="accordion-header">
+      <span>{{item?.description}}</span>
+    </div>
+    <div *ngIf="item?.innerHTML" class="accordion-item-body" role="region" [ngClass]="{
+        'collapsed' : !item?.collapse && !collapsable
+      }" aria-labelledby="accordion-header" [innerHTML]="item?.innerHTML">
+    </div>
+  </cdk-accordion-item>
+</cdk-accordion>

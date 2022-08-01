@@ -1,0 +1,6 @@
+<div class="slide-toggle {{border ? 'slide-toggle-border mapfre-p-sm' : ''}}">
+  <mat-slide-toggle class="{{valign}}" [formControl]="formCtrl" [checked]="dataSwitchToggle?.check" [(ngModel)]="dataSwitchToggle.check" (change)="onChange()">
+    <span class="{{dataSwitchToggle?.titleClass}}">{{dataSwitchToggle?.title}}</span>
+    <ng-content select="[description]"></ng-content>
+  </mat-slide-toggle>
+</div>

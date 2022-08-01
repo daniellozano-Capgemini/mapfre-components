@@ -1,0 +1,11 @@
+<div class="lib-mapfre-container">
+  <h2 class="lib-mapfre-title mapfre-fs-s">{{ 'rating.title' | translate }}</h2>
+  <p class="lib-mapfre-secondary-text">
+    {{ 'rating.subtitle' | translate }}
+  </p>
+  <div class="lib-mapfre-stars">
+    <div *ngFor="let rating of ratingArr; index as i" (click)="onClick(rating.id)">
+      <lib-mapfre-icon icon="star-bold" size="l" [ngClass]="rating.property"></lib-mapfre-icon>
+    </div>
+  </div>
+</div>

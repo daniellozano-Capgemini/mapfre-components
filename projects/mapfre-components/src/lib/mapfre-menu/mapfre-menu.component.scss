@@ -1,0 +1,82 @@
+@import "../assets/styles/functions";
+
+:host {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  position: absolute;
+  z-index: 9999;
+  left: -100%;
+  transition: all ease-in-out 0.4s;
+  background-color: var(--lib-mapfre-color-white, #fff);
+  padding-bottom: env(safe-area-inset-bottom);
+  outline: none;
+
+  lib-mapfre-header[head-fixed] {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    width: 100%;
+  }
+
+  lib-mapfre-content {
+    height: auto;
+    overflow: scroll;
+    & > div {
+      height: auto;
+      overflow: auto;
+    }
+    mapfre-item-accordion {
+      --accordion-item-padding: rem(8) 0;
+      --lib-mapfre-accordion-item-header-color: #526570;
+      --accordion-item-f-weight: normal;
+      --lib-mapfre-accordion-item-fsize: rem(16);
+    }
+    lib-mapfre-item {
+      --lib-mapfre-item-gridt-rows: 0fr 0.5fr;
+      --lib-mapfre-item-fsize:rem(16)
+    }
+  }
+
+  &.mapfre-menu-open {
+    left: 0;
+  }
+
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    display: flex;
+    .logo {
+      width: rem(100);
+      max-height: rem(20);
+      display: flex;
+      align-items: center;
+    }
+
+    .links {
+      height: rem(20);
+      .link {
+        font-family: DMSansMedium;
+        line-height: rem(20);
+        letter-spacing: 0.16px;
+        font-size: rem(12);
+        color: var(--lib-color-text-dark,#2d373d);
+        margin-right: rem(16);
+      }
+    }
+  }
+
+  lib-mapfre-footer {
+    --mapfre-footer-background-color: #f5f6f7;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
+.section-line {
+  width: 100%;
+  height: rem(1);
+  background-color: var(--lib-mapfre-color-lightgrey, #e8ebed);
+}

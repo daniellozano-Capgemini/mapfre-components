@@ -1,0 +1,27 @@
+<div class="mapfre-card-header {{class}}"
+    [ngClass]="{
+      'mapfre-card-header-with-corner': headerSectionType || headerSectionColor
+    }">
+  <ng-template [ngIf]="headerSectionType || headerSectionColor">
+    <span *ngIf="headerSectionType" class="mapfre-card-header-corner mapfre-card-header-corner-{{ headerSectionType }}"></span>
+    <span *ngIf="headerSectionColor" class="mapfre-card-header-corner" [style.background-color]="headerSectionColor"></span>
+  </ng-template>
+  <div class="df jc-sb w-100 ai-c grid-column-gap" *ngIf="title">
+    <div [ngClass]="{'df ai-c': titleAccount}">
+      <span class="mapfre-card-header-title {{ cssClassTitle }}">{{ title }}</span>
+      <span *ngIf="titleAccount" class="mapfre-card-header-title-account mapfre-pr-s mapfre-pl-s">{{ titleAccount }}</span>
+      <span *ngIf="titleGdc" class="mapfre-card-header-title-gdc">GDC</span>
+    </div>
+    <div class="df as-s">
+      <lib-mapfre-amount class="as-c" *ngIf="titleAmount || titleAmount === 0" [amount]="{ value: titleAmount, decimals: 2, format: 'currency', decimalFormat: true, currency: currenctyType }"></lib-mapfre-amount>
+      <ng-content select="[headerIconRight]"></ng-content>
+    </div>
+  </div>
+  <div class="df jc-sb mapfre-block-header-bottom">
+    <span *ngIf="subtitle" class="mapfre-card-header-subtitle {{ cssClass }}">{{ subtitle }}</span>
+    <span *ngIf="number" class="mapfre-card-header-number">{{ numberBig }}<span class="mapfre-card-header-number-small" *ngIf="numberBig && numberSmall">,{{ numberSmall }}</span></span>
+    <lib-mapfre-amount *ngIf="numberInteger" class="dmsans-b"
+      [amount]="{ value: numberInteger, decimals: 2, format: 'currency', decimalFormat: true }" [size]="'normal'">
+    </lib-mapfre-amount>
+  </div>
+</div>

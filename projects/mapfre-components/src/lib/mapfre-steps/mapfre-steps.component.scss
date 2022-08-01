@@ -1,0 +1,60 @@
+@import "../assets/styles/functions";
+@import "../assets/styles/mixins";
+@import "../assets/styles/reusables";
+@import "../assets/styles/helpers";
+
+.lib-mapfre-steps-container {
+  background-color: var(--lib-mapfre-color-primary, #fff);
+  height: var(--lib-mapfre-steps-height);
+  border-bottom: 1px solid var(--lib-mapfre-color-lightgrey, #9cb0bc);
+  .lib-mapfre-title,
+  .lib-mapfre-all-spinners {
+    font-family: DMSansMedium;
+  }
+  .lib-mapfre-title {
+    font-size: rem(14);
+    color: var(--color-text, #2d373d);
+    @include ellipsis();
+  }
+  .lib-mapfre-all-spinners {
+    .lib-mapfre-current-text {
+      font-family: DMSansBold;
+      font-size: em(16px);
+      color: var(--color-text, #2d373d);
+      .lib-mapfre-step-text {
+        font-size: em(12px);
+        color: var(--color-text, #2d373d);
+      }
+    }
+    .lib-mapfre-spinner {
+      circle {
+        stroke-linecap: round;
+        stroke: var(--lib-mapfre-color-primary, #d81e05);
+      }
+    }
+  }
+}
+
+:host {
+  .lib-mapfre-stepper-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--lib-stepper-background, #e8ebed);
+    ::ng-deep {
+      mat-stepper {
+        pointer-events: none;
+        max-height: 100px;
+        background-color: var(--lib-stepper-background, #e8ebed);
+        .mat-step-label {
+          padding: 4px 0 0 0;
+        }
+        .mat-step-icon-state-done , .mat-step-icon-selected{
+          background-color: var(--lib-mapfre-color-primary, #d81e05);
+        }
+      
+      }
+    }
+  }
+}

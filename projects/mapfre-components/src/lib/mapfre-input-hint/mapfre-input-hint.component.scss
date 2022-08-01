@@ -1,0 +1,26 @@
+@import "../assets/styles/functions";
+@import "../assets/styles/mixins";
+@import "../assets/styles/reusables";
+
+:host {
+  --lib-color-text: #526570;
+  --lib-color-success: #008C4B;
+  --lib-color-error: #DA2A2A;
+
+  span {
+    font-size: em(14);
+    color: var(--lib-color-text);
+  }
+
+  &.state-success {
+    span {
+      color: var(--lib-color-success);
+    }
+  }
+
+  &.state-error {
+    span {
+      color: var(--lib-color-error);
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<div class="alert-message-wrapper w-100">
+  <div *ngIf="dataAlertMessage?.messages">
+    <div class="mapfre-p-sm" [ngClass]="{'alert-message-background' : colorAlertMessage === 'warn', 'df ai-c' : inLine}">
+      <div class="flex w-100 jc-s">
+        <lib-mapfre-icon *ngIf="dataAlertMessage?.icon" icon="{{dataAlertMessage?.icon}}" size="m"></lib-mapfre-icon>
+        <div class="flex fd-col w-100">
+          <p [ngClass]="inLine ? 'alert-message-text no-mb' : 'alert-message-text mapfre-ml-s mapfre-mb-s'" *ngFor="let message of dataAlertMessage?.messages">
+            <span [innerHtml]="textCutted ? parcialMessage : message?.message"> </span>
+            <a class="alert-message-link t-underline dmsans-b" (click)="onAction()">{{message?.link?.name}}</a>
+          </p>
+          <div class="t-a-r read-more-button">
+            <button *ngIf="cutText" [type]="'link'" lib-mapfre-button [title]="readText | translate" [icon]="readIcon" (click)="readMore()"></button>
+          </div>
+        </div>
+      </div>
+      <div mat-line [ngClass]="inLine ? 'df' : 'df w-100 jc-e'">
+        <ng-content select=[buttons]></ng-content>
+      </div>
+    </div>
+  </div>
+  <ng-content select=[accordion]></ng-content>
+</div>

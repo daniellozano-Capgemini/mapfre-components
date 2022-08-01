@@ -1,0 +1,3 @@
+<span class="number" [ngClass]="size === 'small' ? 'sm-val-size' : size === 'normal-s' ? 'smx-val-size' : size === 'normal' ? 'md-val-size' : size === 'normal-x' ? 'mds-val-size' : 'xl-val-size'">{{amountNumber}}</span>
+<span class="number" *ngIf="!amount?.decimalFormat" [ngClass]="size === 'small' ? 'sm-val-size' : size === 'normal-s' ? 'smx-val-size' : size === 'normal' ? 'md-val-size' : size === 'normal-x' ? 'mds-val-size' : 'xl-val-size'">,{{amountDecimal}}</span>
+<span class="decimal" *ngIf="amount?.decimalFormat" [ngClass]="size === 'small' ? 'sm-dig-size' : size === 'normal' ? 'md-dig-size' : size === 'normal-x' ? 'mds-dig-size' : 'xl-dig-size'">,{{amountDecimal}}</span>

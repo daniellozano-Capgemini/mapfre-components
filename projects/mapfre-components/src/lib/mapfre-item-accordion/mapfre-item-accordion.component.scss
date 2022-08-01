@@ -1,0 +1,133 @@
+@import '../assets/styles/functions';
+
+.left-header-container {
+  display: flex;
+  align-items: center;
+  .title {
+    font-weight: var(--accordion-item-f-weight, 700);
+  }
+  ::ng-deep .afin-icon {
+    margin-right: em(16px);
+    &.afin-icon-finance-and-justice-business {
+      color: var(--lib-mapfre-color-primary, #d81e05);
+    }
+    &.afin-icon-finance-and-justice-saving-and-investment-products {
+      color: var(--lib-mapfre-color-investment, #0ca6b3);
+    }
+    &.afin-icon-finance-and-justice-saving {
+      color: var(--lib-mapfre-color-saving, #a51783);
+    }
+    &.afin-icon-insurance-life-pension-scheme {
+      color: var(--lib-mapfre-color-pension, #f2a105);
+    }
+  }
+  .valoracion-button {
+    margin-left: -16px;
+  }
+}
+
+:host {
+  outline: none;
+  ::ng-deep {
+    .left-header-container {
+      .mapfre-button-link-underline {
+        padding: 0 0 5px 0px;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.icon-right {
+  display: flex;
+  padding: em(7px) 0 0 0;
+}
+
+.accordion-item-header-link {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  padding: em(14px) 0 0 0;
+  background-color: var(--lib-color-accordion-item-header-color, #fff);
+  color: var(--lib-mapfre-accordion-item-header-color, #2d373d);
+  font-family: DMSansBold;
+  font-size: em(14px);
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: em(0.18px);
+  color: var(--lib-color-accordion-item-header-link-color, #526570);
+  .collapsable {
+    transform: rotate(180deg);
+  }
+}
+.accordion-item-header {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  padding: var(--accordion-item-padding, em(16px) 0);
+  background-color: var(--lib-color-accordion-item-header-color, #fff);
+  color: var(--lib-mapfre-accordion-item-header-color, #2d373d);
+  font-family: DMSansMedium;
+  font-size: var(--lib-mapfre-accordion-item-fsize, em(14px));
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: em(0.21px);
+  border-bottom: em(1px) solid var(--lib-mapfre-accordion-item-header-boder, #e8ebed);
+  .collapsable {
+    transform: rotate(180deg);
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: color(--lib-mapfre-accordion-item-header-hover, #eee);
+  }
+}
+
+.accordion-item-description {
+  font-size: em(13.525px);
+  color: color(--lib-mapfre-accordion-item-description-color, #999);
+}
+
+.accordion-item-body {
+  font-family: DMSansRegular;
+  font-size: em(14px);
+  padding-top: em(16px);
+
+  ::ng-deep {
+    ul {
+      li {
+        margin-bottom: em(16px);
+      }
+    }
+  }
+  &.collapsed {
+    display: none;
+  }
+
+  .accordion-subtitle-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: 3px;
+    color: var(--lib-color-accordion-item-header-link-color, #526570);
+    margin-bottom: 16px;
+    .item-icon {
+      display: flex;
+      margin-right: 1em;
+    }
+    .item-link {
+      font-family: DMSansRegular;
+    }
+
+    .accordion-link {
+      font-family: DMSansMedium;
+      color: var(--lib-color-accordion-item-header-link-color, #526570);
+      text-decoration: underline;
+    }
+
+    .mb-0 {
+      margin-bottom: 0px;
+    }
+  }
+}

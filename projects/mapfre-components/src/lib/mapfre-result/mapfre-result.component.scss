@@ -1,0 +1,55 @@
+@import '../assets/styles/functions';
+@import '../assets/styles/reusables';
+.custom-result {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  .custom-result-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .result-content {
+      min-width: 320px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .buttons-content {
+        width: 100%;
+        margin: 20px 0;
+      }
+      .image-result {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+      }
+      .image-result-l {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+      }
+      p {
+        width: 100%;
+      }
+      .font-size23 {
+        font-size: 1.438rem;
+        line-height: 1.39;
+        letter-spacing: 0.3px;
+      }
+      .font-size16 {
+        font-size: 1rem;
+        line-height: 1.5;
+        letter-spacing: 0.21px;
+      }
+      .font-size14 {
+        font-size: 0.875rem;
+        line-height: 1.43;
+        letter-spacing: 0.18px;
+      }
+    }
+    .buttons-result {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

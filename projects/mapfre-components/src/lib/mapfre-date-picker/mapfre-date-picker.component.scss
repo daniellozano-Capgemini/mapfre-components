@@ -1,0 +1,97 @@
+@import '../assets/styles/functions';
+
+.datepicker-footer {
+  width: 100%;
+  padding: 5%;
+  display: flex;
+  justify-content: flex-end;
+
+  .button-calendar {
+    background: var(--mapfre-date-picker-white, #fff);
+    color: var(--mapfre-date-picker-primary, #d81e05);
+    font-size: em(16);
+    box-shadow: none;
+    &:focus,
+    &:active {
+      outline: 0;
+    }
+    &:nth-child(2) {
+      padding: 0;
+    }
+  }
+}
+
+::ng-deep {
+  .mat-calendar {
+    font-family: DMSansMedium;
+  }
+
+  mat-form-field {
+    font-family: DMSansMedium;
+    width: var(--mapfre-datepicker-input-width, auto);
+    max-width: var(--mapfre-datepicker-input-max-width, auto);
+    &.mat-form-field {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+    }
+    &.mat-form-field-appearance-outline {
+      .mat-form-field-outline {
+        min-height: 2.5rem;
+      }
+      .mat-form-field-flex {
+        padding: 0 0 0 0.5rem;
+      }
+      .mat-form-field-infix {
+        padding: 0;
+        width: 100%;
+        border-top: 0.875rem;
+      }
+      .mat-form-field-outline-start {
+        border-radius: 2px 0 0 2px;
+      }
+      .mat-form-field-outline-end {
+        border-radius: 0 2px 2px 0;
+      }
+      .mat-form-field-outline-thick .mat-form-field-outline-start,
+      .mat-form-field-outline-thick .mat-form-field-outline-end,
+      .mat-form-field-outline-thick .mat-form-field-outline-gap {
+        border-width: 1px;
+      }
+      .mat-form-field-suffix {
+        top: 0.4rem;
+      }
+      .mat-input-element {
+        font-family: DMSansRegular;
+        letter-spacing: 0.21px;
+        line-height: 1.5;
+        margin-top: 1rem;
+        &.ng-dirty {
+          font-family: DMSansMedium;
+          color: var(--lib-color-text, #526570);
+        }
+      }
+    }
+    .mat-form-field-flex {
+      align-items: flex-start;
+    }
+  }
+}
+
+.datepicker-no-padding {
+  ::ng-deep .mat-form-field-wrapper {
+    padding-bottom: 0;
+  }
+}
+
+.datepicker-padding16 {
+  ::ng-deep .mat-form-field-wrapper {
+    padding-bottom: 16px;
+  }
+}
+
+.datepicker-padding8 {
+  ::ng-deep .mat-form-field-wrapper {
+    padding-bottom: 8px;
+  }
+}

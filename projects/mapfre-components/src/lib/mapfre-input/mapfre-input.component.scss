@@ -1,0 +1,141 @@
+@import '../assets/styles/functions';
+@import '../assets/styles/mixins';
+@import '../assets/styles/reusables';
+
+.input-style {
+  @include remove-focus();
+  border-radius: 2px;
+  border: solid 1px var(--lib-color-border);
+  background-color: var(--lib-color-input-background);
+  color: var(--lib-color-text);
+  font-size: rem(16);
+  transition: border 0.3s ease-out;
+  width: 100%;
+  min-height: 2.5rem;
+}
+
+:host {
+  --lib-color-success: #008c4b;
+  --lib-color-error: #da2a2a;
+  --lib-color-disabled: #d2d4cf;
+  --lib-color-readonly: #f5f6f7;
+
+  --lib-color-text: #526570;
+  --lib-color-text-dark: #2d373d;
+  --lib-color-text-disabled: #cdd7dd;
+  --lib-color-text-readonly: #667985;
+  --lib-color-text-placeholder: #667985;
+  --lib-color-text-placeholder-disabled: #d2d4cf;
+  --lib-color-icon: var(--lib-color-text-dark);
+
+  --lib-color-border: #cccfd2;
+  --lib-color-border-active: #9cb0bc;
+
+  --lib-color-input-background: #ffffff;
+  --lib-color-input-background-success: #ffffff;
+  --lib-color-input-background-error: #faf0f2;
+
+  label {
+    color: var(--lib-color-text);
+    font-size: rem(14);
+  }
+
+  input {
+    @extend .input-style;
+
+    &::placeholder {
+      color: var(--lib-color-text-placeholder);
+    }
+
+    &:disabled {
+      color: var(--lib-color-text-placeholder);
+      border-color: var(--lib-color-disabled);
+
+      &::placeholder {
+        color: var(--lib-color-text-placeholder-disabled);
+      }
+    }
+
+  }
+
+  // Add hover and focus styles when blocked states are not applied
+  &:not(.state-disabled):not(.has-success):not(.has-error) {
+    input {
+      &:not(:disabled):not(:read-only) {
+        &:hover,
+        &:focus {
+          border-color: var(--lib-color-border-active);
+        }
+      }
+    }
+  }
+
+  &.state-readonly {
+    input {
+      color: var(--lib-color-text-readonly);
+      border-color: var(--lib-color-readonly);
+      background-color: var(--lib-color-readonly);
+    }
+
+    lib-mapfre-icon {
+      color: var(--lib-color-text-readonly);
+    }
+  }
+
+  &.state-disabled {
+    font-family: DMSansRegular;
+    label {
+      color: var(--lib-color-text-placeholder-disabled, #cdd7dd);
+    }
+
+    lib-mapfre-icon,
+    lib-mapfre-icon .currency {
+      color: var(--lib-color-disabled);
+    }
+  }
+
+  &.has-icon {
+    input {
+      &.icon-right {
+        padding-right: 40px;
+      }
+
+      &.icon-left {
+        padding-left: 40px;
+      }
+    }
+  }
+
+  &.has-success {
+    input {
+      border-color: var(--lib-color-success);
+      background-color: var(--lib-color-input-background-success);
+    }
+  }
+
+  &.has-error {
+    input {
+      border-color: var(--lib-color-error);
+      color: var(--lib-color-error);
+      background-color: var(--lib-color-input-background-error);
+    }
+  }
+
+  lib-mapfre-icon {
+    height: 24px;
+    top: 50%;
+    margin-top: -12px;
+    color: var(--lib-color-icon);
+    &.left {
+      left: 8px;
+    }
+
+    &.right {
+      right: 8px;
+    }
+
+    .currency {
+      color: var(--lib-color-text-placeholder, #667985);
+    }
+  }
+}

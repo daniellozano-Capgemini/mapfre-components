@@ -1,0 +1,11 @@
+@import "src/theme/utils/functions";
+@import "src/theme/utils/reusables";
+
+.grey-box {
+  color: var(--lib-color-text-white, #ffffff);
+  background-color: var(--lib-color-background-dark, #667985);
+  border-radius: 4px;
+  border: 1px solid var(--lib-color-border, #e8ebed);
+  box-shadow: 0 4px 15px 0 rgba(82, 101, 112, 0.15);
+  overflow: hidden; // Need to hide div background color over parent border.
+}

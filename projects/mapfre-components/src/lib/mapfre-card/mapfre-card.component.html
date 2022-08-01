@@ -1,0 +1,9 @@
+<div class="mapfre-card pr {{extraClass}}">
+  <mat-card [class]="highLight ? 'highlight-card': ''">
+    <div class="mapfre-card-wrapper">
+      <ng-content select="[header]"></ng-content>
+      <ng-content select="[body]"></ng-content>
+      <ng-content select="[footer]"></ng-content>
+    </div>
+  </mat-card>
+</div>

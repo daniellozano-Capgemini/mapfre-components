@@ -1,0 +1,13 @@
+<div class="df ai-c jc-sb pr" [style.--progress-width]="getProgress()">
+  <div class="progress fg-1 df ai-c mapfre-pl-s mapfre-pr-s dmsans-b" [class.jc-c]="objective"
+       [style.--progress-min-width]="objective ? getProgress() : 'auto'">
+    <img class="icon mapfre-pr-xxs" src="./assets/icon-states-check.svg" alt="Success"
+         *ngIf="objective && percentage>=100">
+    <!-- Progress text value -->
+    <span>{{text}}</span>
+  </div>
+
+  <!-- Objective text value -->
+  <span class="objective mapfre-pl-s mapfre-pr-s dmsans-b"
+        *ngIf="objective && percentage<100">{{objective}}</span>
+</div>

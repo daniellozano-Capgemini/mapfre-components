@@ -1,0 +1,18 @@
+<div class="date-picker-header">
+  <div *ngIf="opts?.header?.title?.show" class="date-picker-header__title mapfre-mt-s" id="header-title">
+    {{opts?.header?.title?.text | translate}}
+  </div>
+  <div class="date-picker-header__buttons">
+    <lib-mapfre-icon icon="simple-arrow-left" (click)="previousClicked('year')"></lib-mapfre-icon>
+    <span class="mapfre-ml-s mapfre-mr-s">{{getYear()}}</span>
+    <lib-mapfre-icon icon="simple-arrow-right" (click)="nextClicked('year')"></lib-mapfre-icon>
+  </div>
+  <div class="date-picker-header__date mapfre-mb-sm">
+    {{getCurrentDay()}}
+  </div>
+  <div class="date-picker-header__toggle">
+    <lib-mapfre-icon icon="simple-arrow-left" (click)="previousClicked('month')"></lib-mapfre-icon>
+    <div class="mapfre-ml-s mapfre-mr-s">{{getMonth()}} {{getYear()}}</div>
+    <lib-mapfre-icon icon="simple-arrow-right" (click)="nextClicked('month')"></lib-mapfre-icon>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div *ngIf="observable$">
+  <lib-mapfre-input [maxlength]="maxlength" [label]="options?.label  | translate"
+    [formControl]="$any(formGroup?.controls[formControlName])" type="text" [autocomplete]="autoDirection">
+  </lib-mapfre-input>
+  <mat-autocomplete
+  (optionSelected)="optionSelected($event.option.value)"
+  autoActiveFirstOption #autoDirection="matAutocomplete">
+    <mat-option *ngFor="let ele of observable$ | async" [value]="ele[dataKey]">
+      {{ ele[dataKey] }}
+    </mat-option>
+  </mat-autocomplete>
+  <lib-mapfre-input-hint *ngIf="
+  formGroup?.controls[formControlName].errors?.required &&
+  !formGroup?.controls[formControlName].pristine
+" type="error" [text]="'register.form_personal_data.obligatory_hint' | translate"></lib-mapfre-input-hint>
+</div>

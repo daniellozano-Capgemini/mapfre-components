@@ -1,0 +1,19 @@
+<div class="container w-50-l mapfre-mx-a">
+  <div class="header mapfre-mb-sm">
+    <div class="header__label">
+      {{label}}
+    </div>
+    <lib-mapfre-icon (click)="showKey = !showKey" [icon]="!showKey ? 'no-view' :'view'" size="m"></lib-mapfre-icon>
+  </div>
+  <form [formGroup]="keyInputForm" class="content" autoFocused id="formGroup">
+    <div *ngFor="let position of allPositionsIndexes; let i = index">
+      <input matInput [formControlName]="position" class="content__position" maxlength="1"
+        [type]="showKey && !keyInputForm?.controls[position]?.disabled ? 'text' : 'password'"
+        (input)="onInput(position)"[id]="idInputPassword + i"/>
+      <div class="content__number ">
+        {{ position }}
+      </div>
+    </div>
+    <lib-mapfre-input-hint *ngIf="hasError" [text]="'page.your.profile.signing.change.errorchar' | translate" type="error"></lib-mapfre-input-hint>
+  </form>
+</div>

@@ -1,0 +1,107 @@
+@import "../assets/styles/functions";
+@import "../assets/styles/mixins";
+@import "../assets/styles/reusables";
+
+:host {
+  --lib-color: #2D373D;
+  --lib-color-profile: #D81E05;
+  --lib-color-border: #CCCFD2;
+  --lib-color-background: #FFFFFF;
+
+  .mapfre__header {
+    border-bottom: 1px solid var(--lib-color-border);
+    background-color: var(--lib-color-background);
+    min-height: rem(55);
+    padding: rem(12);
+    &--info {
+      min-width: 0;
+      color: var(--lib-color);
+
+      .title {
+        font-size: rem(16);
+        letter-spacing: var(--mapfre-header-title-lspace, 0.21px);
+        @include ellipsis();
+        letter-spacing: 0.21px;
+      }
+
+      .brand {
+        width: rem(96);
+      }
+
+      .user {
+        color: var(--lib-color);
+        min-width: 0;
+
+        &--oval {
+          flex-shrink: 0;
+          width: rem(40);
+          height: rem(40);
+          border: solid 1px #667985;
+          border-radius: 50%;
+
+          span {
+            font-size: rem(20);
+            line-height: 1.43;
+            letter-spacing: 0.18px;
+          }
+        }
+
+        &--name {
+          overflow: hidden;
+          font-family: DMSansBold;
+          font-size: rem(14);
+          margin-left: rem(8);
+          line-height: 1.43;
+          letter-spacing: 0.18px;
+          color: var(--lib-color-text-dark,#2d373d);
+          @media(min-width: 768px) {
+            font-size: rem(16);
+            margin-left: rem(16);
+            line-height: 1.25;
+            letter-spacing: 0.21px;
+          }
+
+          span {
+            @include ellipsis();
+          }
+        }
+      }
+
+      .profile-button {
+        border: solid 1px var(--lib-color-profile);
+        border-radius: rem(8);
+        font-size: rem(14);
+        color: var(--lib-color-profile);
+        white-space: nowrap;
+
+        &.state-has-notification {
+          &::after {
+            display: block;
+            position: absolute;
+            content: '';
+            top: rem(6);
+            right: rem(6);
+            width: rem(5);
+            height: rem(5);
+            background-color: var(--lib-color-profile);
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+
+    &--action {
+      flex-shrink: 0;
+    }
+
+    .fix-horizontal-align {
+      margin-left: -0.5rem;
+    }
+  }
+
+  &.header-user {
+    .mapfre__header {
+      height: rem(65);
+    }
+  }
+}

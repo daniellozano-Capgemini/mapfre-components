@@ -1,0 +1,66 @@
+@import '../assets/styles/reusables';
+@import '../assets/styles/functions';
+
+:host {
+  .container {
+    padding: em(16) 0 0;
+    .header {
+      display: flex;
+      justify-content: space-evenly;
+      &__label {
+        font-size: em(16);
+        text-align: center;
+        line-height: 1.5;
+        letter-spacing: 0.21px;
+        color: var(--lib-color-title, #526570);
+        font-family: DMSansBold;
+      }
+    }
+    .content {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      &__position {
+        --size-astherisc: 22px; //necesario en PX, es un hack para aumentar astherisc size de manera rápida
+        width: 34px;
+        height: 40px;
+        font-size: 1rem;
+        border-radius: 2px;
+        border: solid 1px var(--signing-key-color-border, #cccfd2);
+        background-color: var(--signing-key-color-white, #fff);
+        text-align: center;
+        color: var(--signing-key-color-dark, #526570);
+        font-family: DMSansMedium;
+
+        &:disabled {
+          border-color: #e5e7e8;
+          background-color: var(--signing-key-color-white, #fff);
+          color: #d2d4cf;
+          font-size: var(--size-astherisc);
+          & + .content__number {
+            color: #667985;
+          }
+        }
+        &[type='password'] {
+          font-size: var(--size-astherisc);
+        }
+        &[type='password']:not(:disabled) {
+          color: #2d373d;
+        }
+        &:focus,
+        &:focus-visible {
+          &:not(:disabled) {
+            outline: 0;
+            border-color: #9cb0bc;
+          }
+        }
+      }
+      &__number {
+        font-family: DMSansRegular;
+        text-align: center;
+        color: var(--lib-mapfre-grey, #667985);
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}

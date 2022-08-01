@@ -1,0 +1,8 @@
+<div class="container">
+    <mat-checkbox [formControl]="formContrl" [required]="required" [labelPosition]="labelPosition" [disabled]="disabled">
+      <span> {{ text }} {{ disabled && disabledText ? disabledText : null }} </span> <span *ngFor="let link of links"
+        class="link dmsans-m" (click)="emitClick($event, link)"> {{ link.value }}</span> <span> {{ moreText }} </span>
+      <span *ngFor="let linkSecond of linksSecond" class="link dmsans-m" (click)="emitClick($event, linkSecond)"> {{
+        linkSecond.value }}</span>
+    </mat-checkbox>
+</div>

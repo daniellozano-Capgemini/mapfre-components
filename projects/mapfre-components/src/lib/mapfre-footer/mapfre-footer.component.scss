@@ -1,0 +1,23 @@
+@import "../assets/styles/reusables";
+@import "../assets/styles/functions";
+
+:host {
+    .mapfre-footer {
+      width: 100%;
+      background-color: var(--mapfre-footer-background-color, #fff);
+      padding: rem(16);
+      border-top: solid 1px var(--mapfre-footer-border-top, none);
+      min-height: rem(40);
+    }
+
+    .background-grey {
+      font-family: DMSansRegular;
+      --mapfre-footer-background-color: #f5f6f7;
+      background-color: var(--mapfre-footer-background-color, #f5f6f7);
+    }
+
+    .footer-inversion{
+      box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.2);
+      border: solid 1px var(--lib-mapfre-dirty-white, #dadada);
+    }
+}

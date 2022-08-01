@@ -1,0 +1,8 @@
+<div class="mapfre-tabs">
+  <mat-tab-group mat-align-tabs="center" [(selectedIndex)]="selectedTabIndex" (selectedIndexChange)="changeIndex($event)" mat-stretch-tabs>
+    <mat-tab *ngFor="let tab of dataTabs" label="{{tab.title}}">
+        <ng-content matTabContent>
+        </ng-content>
+    </mat-tab>
+  </mat-tab-group>
+</div>
