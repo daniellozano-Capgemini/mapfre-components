@@ -1,18 +1,19 @@
-@import "../assets/styles/functions";
-@import "../assets/styles/mixins";
-@import "../assets/styles/reusables";
+@import "../../theme/functions";
+@import "../../theme/mixins";
+@import "../../theme/reusables";
 
 :host {
   --lib-color: #526570;
-  --lib-color-active: #2D373D;
-  --lib-color-background: #FFFFFF;
+  --lib-color-active: #2d373d;
+  --lib-color-background: #ffffff;
   --lib-heigth: 72px;
   --lib-z-index: 1;
 
   z-index: var(--lib-z-index);
   box-shadow: 0 4px 15px 0 rgba(82, 101, 112, 0.15);
 
-  ul, li {
+  ul,
+  li {
     margin: 0;
     padding: 0;
   }
@@ -48,19 +49,19 @@
           width: 100%;
           @include ellipsis();
           letter-spacing: 0.5px;
-          transition: font-weight .3s ease-out;
+          transition: font-weight 0.3s ease-out;
         }
 
         // Bottom line effect for active item state.
         &::after {
           @include horizontal-align($position: absolute);
           display: block;
-          content: '';
+          content: "";
           bottom: 0;
           width: 0;
           height: 4px;
           background-color: transparent;
-          transition: width .3s ease-out, background-color .3s ease-out;
+          transition: width 0.3s ease-out, background-color 0.3s ease-out;
         }
 
         &.active {

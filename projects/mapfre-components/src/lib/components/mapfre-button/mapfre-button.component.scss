@@ -1,4 +1,4 @@
-@import '../assets/styles/functions';
+@import "../../theme/functions";
 
 :host {
   min-height: 2.5rem; //40px
@@ -73,8 +73,8 @@
     width: 100%;
     display: block;
   }
-  &.mapfre-button-block[ng-reflect-title='Borrar filtros'] {
-  padding-left:0;
+  &.mapfre-button-block[ng-reflect-title="Borrar filtros"] {
+    padding-left: 0;
   }
   &.mapfre-button-large {
     --min-width-large: 10rem; //160px

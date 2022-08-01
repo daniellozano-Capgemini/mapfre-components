@@ -1,11 +1,11 @@
-@import "../assets/styles/functions";
-@import "../assets/styles/mixins";
-@import "../assets/styles/reusables";
+@import "../../theme/functions";
+@import "../../theme/mixins";
+@import "../../theme/reusables";
 
 :host {
   --lib-color-text: #526570;
-  --lib-color-success: #008C4B;
-  --lib-color-error: #DA2A2A;
+  --lib-color-success: #008c4b;
+  --lib-color-error: #da2a2a;
 
   span {
     font-size: em(14);

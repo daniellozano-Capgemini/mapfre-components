@@ -9,7 +9,6 @@ import { MapfreAutoCompleteOptions } from './mapfre-autocomplete.interface';
   styleUrls: ['./mapfre-autocomplete.component.scss'],
 })
 export class MapfreAutocompleteComponent implements OnInit {
-
   @Input() options: MapfreAutoCompleteOptions;
   @Input() formGroup: FormGroup;
   @Input() observable$: Observable<any>;
@@ -20,7 +19,7 @@ export class MapfreAutocompleteComponent implements OnInit {
   required: boolean;
 
   constructor() {
-    this.maxlength = '30'
+    this.maxlength = '30';
   }
 
   ngOnInit() {
@@ -28,8 +27,7 @@ export class MapfreAutocompleteComponent implements OnInit {
     this.dataKey = this.options?.dataKey;
   }
 
-  optionSelected(v){
-    this.formGroup.get(this.formControlName).setValue(v)
+  optionSelected(v) {
+    this.formGroup.get(this.formControlName).setValue(v);
   }
-
 }

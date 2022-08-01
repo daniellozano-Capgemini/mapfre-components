@@ -1,4 +1,4 @@
-@import "../assets/styles/mixins";
+@import "../../theme/mixins";
 
 .mapfre-tabs {
   .mat-tab-group {
@@ -7,7 +7,7 @@
     color: var(--lib-color-dark, #2d373d);
   }
   ::ng-deep {
-    .mat-tab-group[mat-stretch-tabs]>.mat-tab-header .mat-tab-label {
+    .mat-tab-group[mat-stretch-tabs] > .mat-tab-header .mat-tab-label {
       flex-basis: max-content;
     }
     .mat-tab-group {
@@ -18,8 +18,8 @@
         color: var(--lib-color-dark, #2d373d);
         @include mapfre-fs-xxs-r;
       }
-      .mat-tab-labels{
-        .mat-tab-label{
+      .mat-tab-labels {
+        .mat-tab-label {
           height: var(--mat-tab-label-height, 40px);
         }
       }
@@ -27,9 +27,9 @@
     .mat-tab-group .mat-tab-label-active .mat-tab-label-content {
       font-family: DMSansBold;
       font-weight: bold !important;
-
     }
-    .mat-tab-header-pagination-before, .mat-tab-header-pagination-after {
+    .mat-tab-header-pagination-before,
+    .mat-tab-header-pagination-after {
       display: none;
     }
 

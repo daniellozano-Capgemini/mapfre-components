@@ -1,7 +1,7 @@
-@import "../assets/styles/functions";
-@import "../assets/styles/mixins";
-@import "../assets/styles/reusables";
-@import "../assets/styles/helpers";
+@import "../../theme/functions";
+@import "../../theme/mixins";
+@import "../../theme/reusables";
+@import "../../theme/helpers";
 
 .lib-mapfre-steps-container {
   background-color: var(--lib-mapfre-color-primary, #fff);
@@ -50,10 +50,10 @@
         .mat-step-label {
           padding: 4px 0 0 0;
         }
-        .mat-step-icon-state-done , .mat-step-icon-selected{
+        .mat-step-icon-state-done,
+        .mat-step-icon-selected {
           background-color: var(--lib-mapfre-color-primary, #d81e05);
         }
-      
       }
     }
   }

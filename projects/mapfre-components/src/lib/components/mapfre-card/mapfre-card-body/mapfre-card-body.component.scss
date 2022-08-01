@@ -1,46 +1,46 @@
-@import '../../assets/styles/functions';
+@import "../../../theme/functions";
 
 .flex-space {
   display: flex;
   justify-content: space-between;
 }
 
-.mapfre-card-body{
+.mapfre-card-body {
   font-family: DMSansMedium;
   ::ng-deep {
-    .mapfre-card-account-info{
+    .mapfre-card-account-info {
       @extend .flex-space;
       align-items: center;
-      .mapfre-card-account-info-update{
+      .mapfre-card-account-info-update {
         font-size: em(12px);
         font-family: DMSansBold;
         color: var(--lib-mapfre-card-info-update, #667985);
-        .mapfre-card-account-info-update-date{
+        .mapfre-card-account-info-update-date {
           font-weight: DMSansMedium;
         }
       }
-      .mapfre-card-account-info-total{
-        .mapfre-card-account-info-total-amount{
+      .mapfre-card-account-info-total {
+        .mapfre-card-account-info-total-amount {
           font-size: em(24px);
-          .mapfre-card-account-info-total-currency{
+          .mapfre-card-account-info-total-currency {
             font-size: em(16px);
           }
         }
       }
     }
-    .mapfre-card-account-summary{
+    .mapfre-card-account-summary {
       @extend .flex-space;
       margin-top: em(10px);
       border-radius: em(4px);
       background-color: var(--lib-mapfre-card-account-summary-bg, #e8ebed);
       padding: 0.356rem 1rem;
-      .mapfre-card-account-summary-text{
+      .mapfre-card-account-summary-text {
         color: var(--lib-mapfre-grey, #667985);
         font-size: em(12px);
         font-family: DMSansMedium;
         letter-spacing: 0.16px;
       }
-      .mapfre-card-account-summary-amount{
+      .mapfre-card-account-summary-amount {
         font-size: em(14px);
         color: var(--lib-mapfre-color-dark-grey, #526570);
       }

@@ -1,10 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { setIndex } from '@ionic-native/core/decorators/common';
+// import { setIndex } from '@ionic-native/core/decorators/common';
 
 @Component({
   selector: 'lib-mapfre-star-rating',
   templateUrl: './mapfre-star-rating.component.html',
-  styleUrls: ['./mapfre-star-rating.component.scss']
+  styleUrls: ['./mapfre-star-rating.component.scss'],
 })
 export class MapfreStarRatingComponent implements OnInit {
   public color: string = '#d81e05';
@@ -37,6 +37,9 @@ export class MapfreStarRatingComponent implements OnInit {
   }
 
   changeIcon(index: number) {
-    this.ratingArr.forEach((elem) => (elem.property = elem.id <= index ? 'star-primary' : 'star-disable'));
+    this.ratingArr.forEach(
+      (elem) =>
+        (elem.property = elem.id <= index ? 'star-primary' : 'star-disable')
+    );
   }
 }

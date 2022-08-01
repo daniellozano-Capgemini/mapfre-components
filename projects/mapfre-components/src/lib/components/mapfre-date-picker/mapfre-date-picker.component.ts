@@ -1,20 +1,39 @@
-import { Component, ElementRef, EventEmitter, Inject, Input, OnInit, Output, SimpleChange, SimpleChanges, ViewChild } from '@angular/core';
-import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatDateFormats } from '@angular/material/core';
-import { MatDatepicker, MatDatepickerInputEvent } from '@angular/material/datepicker';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Inject,
+  Input,
+  OnInit,
+  Output,
+  SimpleChange,
+  SimpleChanges,
+  ViewChild,
+} from '@angular/core';
+import {
+  DateAdapter,
+  MAT_DATE_FORMATS,
+  MAT_DATE_LOCALE,
+  MatDateFormats,
+} from '@angular/material/core';
+import {
+  MatDatepicker,
+  MatDatepickerInputEvent,
+} from '@angular/material/datepicker';
 import moment from 'moment';
 import { DatePickerConstant, DatePickerOptions } from './model';
 import { MapfreDatePickerHeaderComponent } from './date-picker-header/date-picker-header.component';
 import { MapfreDatePickerService } from './service';
 import { FormGroup } from '@angular/forms';
-import { CustomDateAdapter } from '../custom-date-adapter';
+import { CustomDateAdapter } from '../../common/custom-date-adapter';
 
 export const MY_FORMATS = {
   parse: {
-    dateInput: 'DD/MM/YYYY'
+    dateInput: 'DD/MM/YYYY',
   },
   display: {
-    dateInput: 'DD/MM/YYYY'
-  }
+    dateInput: 'DD/MM/YYYY',
+  },
 };
 
 @Component({
@@ -22,16 +41,21 @@ export const MY_FORMATS = {
   templateUrl: './mapfre-date-picker.component.html',
   styleUrls: ['./mapfre-date-picker.component.scss'],
   providers: [
-    { provide: DateAdapter, useClass: CustomDateAdapter, deps: [MAT_DATE_LOCALE] },
-    { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS }
-  ]
+    {
+      provide: DateAdapter,
+      useClass: CustomDateAdapter,
+      deps: [MAT_DATE_LOCALE],
+    },
+    { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS },
+  ],
 })
 export class MapfreDatePickerComponent implements OnInit {
   @Input() opts: Partial<DatePickerOptions>;
   @Output() onSelectDate: EventEmitter<moment.Moment>;
   @Output() isValid: EventEmitter<boolean>;
 
-  @ViewChild('datepickerFooter', { static: false }) datepickerFooter: ElementRef;
+  @ViewChild('datepickerFooter', { static: false })
+  datepickerFooter: ElementRef;
   @ViewChild('datepicker', { static: false }) datepicker: MatDatepicker<any>;
   @Input() dateInit: Date;
   @Input() minDate: string;
@@ -71,10 +95,14 @@ export class MapfreDatePickerComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.adapter.setLocale(this.opts?.locale || DatePickerConstant.LOCALE_DEFAULT);
+    this.adapter.setLocale(
+      this.opts?.locale || DatePickerConstant.LOCALE_DEFAULT
+    );
     this.opts = { ...this.defaultOpts, ...this.opts };
     this.datePickerService.setOptions(this.opts);
-    this.datePickerHeader = this.datePickerService.getDatePickerHeader(this.opts);
+    this.datePickerHeader = this.datePickerService.getDatePickerHeader(
+      this.opts
+    );
     this.formGroup = this.datePickerService.createForm(this.opts);
     if (this.dateInit) {
       this.formGroup?.controls?.date?.setValue(this.dateInit);
@@ -91,7 +119,11 @@ export class MapfreDatePickerComponent implements OnInit {
     this.datepicker.close = this.closeMethod;
     this.datepicker.close();
     this.onSelectDate.emit(this.value);
-    const isValid = moment(this.value, this.dateFormats.display.dateInput, true).isValid();
+    const isValid = moment(
+      this.value,
+      this.dateFormats.display.dateInput,
+      true
+    ).isValid();
     this.isValid.emit(isValid);
   }
 
@@ -115,7 +147,11 @@ export class MapfreDatePickerComponent implements OnInit {
   }
 
   onChange($event) {
-    const date = moment($event.target.value, this.dateFormats.display.dateInput, true);
+    const date = moment(
+      $event.target.value,
+      this.dateFormats.display.dateInput,
+      true
+    );
     const isValid = moment(date).isValid();
     if (isValid) {
       this.value = date;
@@ -128,8 +164,14 @@ export class MapfreDatePickerComponent implements OnInit {
   }
 
   onDateInput(event) {
-    if (typeof event.value?._i !== 'string') { return;}
-    const date = moment(event.target.value, this.dateFormats.display.dateInput, true);
+    if (typeof event.value?._i !== 'string') {
+      return;
+    }
+    const date = moment(
+      event.target.value,
+      this.dateFormats.display.dateInput,
+      true
+    );
     const isValid = moment(date).isValid() && !event.value._i.includes('_');
     if (isValid) {
       this.onChange(event);
@@ -150,7 +192,9 @@ export class MapfreDatePickerComponent implements OnInit {
 
   private appendFooter() {
     setTimeout(() => {
-      const matCalendar = document.getElementsByClassName('mat-datepicker-content')[0] as HTMLElement;
+      const matCalendar = document.getElementsByClassName(
+        'mat-datepicker-content'
+      )[0] as HTMLElement;
       matCalendar?.appendChild(this.datepickerFooter?.nativeElement);
     });
   }

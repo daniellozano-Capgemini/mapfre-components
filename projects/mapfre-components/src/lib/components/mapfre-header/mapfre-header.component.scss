@@ -1,12 +1,12 @@
-@import "../assets/styles/functions";
-@import "../assets/styles/mixins";
-@import "../assets/styles/reusables";
+@import "../../theme/functions";
+@import "../../theme/mixins";
+@import "../../theme/reusables";
 
 :host {
-  --lib-color: #2D373D;
-  --lib-color-profile: #D81E05;
-  --lib-color-border: #CCCFD2;
-  --lib-color-background: #FFFFFF;
+  --lib-color: #2d373d;
+  --lib-color-profile: #d81e05;
+  --lib-color-border: #cccfd2;
+  --lib-color-background: #ffffff;
 
   .mapfre__header {
     border-bottom: 1px solid var(--lib-color-border);
@@ -53,8 +53,8 @@
           margin-left: rem(8);
           line-height: 1.43;
           letter-spacing: 0.18px;
-          color: var(--lib-color-text-dark,#2d373d);
-          @media(min-width: 768px) {
+          color: var(--lib-color-text-dark, #2d373d);
+          @media (min-width: 768px) {
             font-size: rem(16);
             margin-left: rem(16);
             line-height: 1.25;
@@ -78,7 +78,7 @@
           &::after {
             display: block;
             position: absolute;
-            content: '';
+            content: "";
             top: rem(6);
             right: rem(6);
             width: rem(5);

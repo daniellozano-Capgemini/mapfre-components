@@ -1,6 +1,6 @@
-@import "../assets/styles/functions";
-@import "../assets/styles/mixins";
-@import "../assets/styles/reusables";
+@import "../../theme/functions";
+@import "../../theme/mixins";
+@import "../../theme/reusables";
 
 :host {
   --lib-color-text: #526570;
@@ -8,9 +8,9 @@
   margin-bottom: var(--mapfre-radio-margin-bottom-separator, 1.813em);
 
   .title {
-    font-size:  var(--lib-mapfre-radio-title-fsize, em(16));
-    font-weight:  var(--lib-mapfre-radio-title-fweight);
-    color:  var(--lib-mapfre-radio-title-color);
+    font-size: var(--lib-mapfre-radio-title-fsize, em(16));
+    font-weight: var(--lib-mapfre-radio-title-fweight);
+    color: var(--lib-mapfre-radio-title-color);
   }
 
   .bg-grey {
@@ -30,7 +30,7 @@
   }
 
   ::ng-deep {
-    .mat-radio-group{
+    .mat-radio-group {
       margin-top: var(--mapfre-radio-group-margin-top);
     }
     .mat-radio-button {
@@ -44,7 +44,7 @@
         align-items: flex-start;
         transition: color 0.3s ease-out;
       }
-      
+
       &.mat-radio-checked {
         .mat-radio-label {
           font-family: var(--mapfre-radio-font-family, DMSansMedium);

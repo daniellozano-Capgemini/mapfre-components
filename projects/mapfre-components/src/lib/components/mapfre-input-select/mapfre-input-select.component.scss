@@ -1,7 +1,7 @@
-@import '../assets/styles/functions';
-@import '../assets/styles/mixins';
-@import '../assets/styles/reusables';
-@import './src/theme/fonts/_mapfre-icons-variables';
+@import "../../theme/functions";
+@import "../../theme/mixins";
+@import "../../theme/reusables";
+// @import "../../theme/fonts/_mapfre-icons-variables";
 
 :host {
   --lib-color-border: #cccfd2;
@@ -19,14 +19,14 @@
   ::ng-deep .ng-dropdown-panel {
     border: 0;
     top: rem(39);
-    .ng-dropdown-panel-items{
+    .ng-dropdown-panel-items {
       border-bottom-right-radius: rem(4);
       border-bottom-left-radius: rem(4);
       border-bottom-color: var(--lib-color-border);
       margin-bottom: -1px;
       background-color: var(--lib-color-input-background);
       border: 1px solid var(--lib-color-border);
-      box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
     }
   }
 
@@ -100,7 +100,7 @@
       }
     }
     .ng-arrow {
-      font-family: 'AFINIcons' !important;
+      font-family: "AFINIcons" !important;
       speak: never;
       font-style: normal;
       font-weight: normal;
@@ -120,7 +120,7 @@
       top: 0;
       right: rem(6);
       &::before {
-        content: $afin-icon-simple-arrow-down;
+        // content: $afin-icon-simple-arrow-down;
       }
     }
   }
@@ -135,8 +135,14 @@
     min-height: rem(40);
     font-family: DMSansRegular;
   }
-  .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected .ng-option-label,
-  .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected.ng-option-marked .ng-option-label {
+  .ng-dropdown-panel
+    .ng-dropdown-panel-items
+    .ng-option.ng-option-selected
+    .ng-option-label,
+  .ng-dropdown-panel
+    .ng-dropdown-panel-items
+    .ng-option.ng-option-selected.ng-option-marked
+    .ng-option-label {
     font-size: rem(14);
     font-weight: normal;
     line-height: 1.14;
@@ -148,7 +154,9 @@
     background-color: #f5f6f7;
   }
   .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected,
-  .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected.ng-option-marked {
+  .ng-dropdown-panel
+    .ng-dropdown-panel-items
+    .ng-option.ng-option-selected.ng-option-marked {
     background-color: #9cb0bc;
   }
 }

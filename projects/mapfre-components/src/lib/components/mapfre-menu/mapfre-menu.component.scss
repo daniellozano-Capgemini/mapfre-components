@@ -1,4 +1,4 @@
-@import "../assets/styles/functions";
+@import "../../theme/functions";
 
 :host {
   height: 100%;
@@ -34,14 +34,13 @@
     }
     lib-mapfre-item {
       --lib-mapfre-item-gridt-rows: 0fr 0.5fr;
-      --lib-mapfre-item-fsize:rem(16)
+      --lib-mapfre-item-fsize: rem(16);
     }
   }
 
   &.mapfre-menu-open {
     left: 0;
   }
-
 
   .footer {
     display: flex;
@@ -61,7 +60,7 @@
         line-height: rem(20);
         letter-spacing: 0.16px;
         font-size: rem(12);
-        color: var(--lib-color-text-dark,#2d373d);
+        color: var(--lib-color-text-dark, #2d373d);
         margin-right: rem(16);
       }
     }

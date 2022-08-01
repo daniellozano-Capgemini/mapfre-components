@@ -1,16 +1,16 @@
-@import "../assets/styles/functions";
+@import "../../theme/functions";
 
-:host{
+:host {
   --lib-mapfre-grey: #526570;
   --lib-mapfre-dark-grey: #2d373d;
   --lib-mapfre-negative-red: #da2a2a;
   --lib-mapfre-positive-green: #008c4b;
   --lib-mapfre-dirty-white: #e8ebed;
 
-  .body{
+  .body {
     border-top: 1px solid var(--lib-mapfre-dirty-white);
   }
-  .container > div{
+  .container > div {
     padding: em(8px) 0;
   }
 
@@ -37,7 +37,7 @@
       font-size: em(20px);
       color: var(--lib-mapfre-dark-grey);
       grid-area: value-number;
-      .value-number-small{
+      .value-number-small {
         font-size: em(14px);
       }
     }
@@ -52,7 +52,7 @@
       font-size: em(20px);
       color: var(--lib-mapfre-dark-grey);
       grid-area: pg-number;
-      .pg-small{
+      .pg-small {
         font-size: em(14px);
       }
     }
@@ -70,11 +70,11 @@
     }
   }
 
-  .negative{
+  .negative {
     color: var(--lib-mapfre-negative-red) !important;
   }
 
-  .positive{
+  .positive {
     color: var(--lib-mapfre-positive-green) !important;
   }
 }

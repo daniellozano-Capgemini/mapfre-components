@@ -1,4 +1,4 @@
-@import '../../assets/styles/functions';
+@import "../../../theme/functions";
 
 $cornerSize: 8px;
 $rotateDeg: 135deg;
@@ -41,15 +41,17 @@ $cornerLeftPosition: 4px;
     &::after,
     &::before {
       @extend .size;
-      content: '';
+      content: "";
       position: absolute;
       background-color: inherit;
     }
     &::after {
-      transform: rotate($rotateDeg) skewY($skewDeg) scale(0.707, 1.414) translate(50%);
+      transform: rotate($rotateDeg) skewY($skewDeg) scale(0.707, 1.414)
+        translate(50%);
     }
     &::before {
-      transform: rotate(-$rotateDeg) skewX($skewDeg) scale(1.414, 0.707) translate(0, -50%);
+      transform: rotate(-$rotateDeg) skewX($skewDeg) scale(1.414, 0.707)
+        translate(0, -50%);
     }
     &.mapfre-card-header-corner-inversion {
       background-color: var(--lib-mapfre-card-header-corner-inversion, #0ca6b3);
@@ -61,10 +63,16 @@ $cornerLeftPosition: 4px;
       background-color: var(--lib-mapfre-card-header-corner-pensions, #f2a105);
     }
     &.mapfre-card-header-corner-rentFixed {
-      background-color: var(--lib-mapfre-card-header-corner-rent-variable, #00cc99);
+      background-color: var(
+        --lib-mapfre-card-header-corner-rent-variable,
+        #00cc99
+      );
     }
     &.mapfre-card-header-corner-rentVariable {
-      background-color: var(--lib-mapfre-card-header-corner-rent-fixed, #1adff0);
+      background-color: var(
+        --lib-mapfre-card-header-corner-rent-fixed,
+        #1adff0
+      );
     }
   }
 

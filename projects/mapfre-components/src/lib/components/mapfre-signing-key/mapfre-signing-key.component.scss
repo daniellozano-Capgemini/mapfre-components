@@ -1,5 +1,5 @@
-@import '../assets/styles/reusables';
-@import '../assets/styles/functions';
+@import "../../theme/reusables";
+@import "../../theme/functions";
 
 :host {
   .container {
@@ -41,10 +41,10 @@
             color: #667985;
           }
         }
-        &[type='password'] {
+        &[type="password"] {
           font-size: var(--size-astherisc);
         }
-        &[type='password']:not(:disabled) {
+        &[type="password"]:not(:disabled) {
           color: #2d373d;
         }
         &:focus,

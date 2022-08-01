@@ -1,48 +1,48 @@
-@import "../assets/styles/functions";
+@import "../../theme/functions";
 span {
-    font-family: var(--amount-font-family, DMSansMedium);
+  font-family: var(--amount-font-family, DMSansMedium);
 }
 .number {
-    font-size: rem(18);
+  font-size: rem(18);
 }
 
 .decimal {
-    font-size: rem(14);
-    font-family: var(--amount-decimal-font-family, DMSansBold);
+  font-size: rem(14);
+  font-family: var(--amount-decimal-font-family, DMSansBold);
 }
 
 .sm-val-size {
-    font-size: rem(12);
+  font-size: rem(12);
 }
 
 .smx-val-size {
-    font-size: rem(14);
+  font-size: rem(14);
 }
 
 .mds-val-size {
-    font-size: rem(16);
+  font-size: rem(16);
 }
 
 .md-val-size {
-    font-size: rem(20);
+  font-size: rem(20);
 }
 
 .xl-val-size {
-    font-size: rem(32);
+  font-size: rem(32);
 }
 
 .sm-dig-size {
-    font-size: rem(8);
+  font-size: rem(8);
 }
 
 .mds-dig-size {
-    font-size: rem(12);
+  font-size: rem(12);
 }
 
 .md-dig-size {
-    font-size: rem(16);
+  font-size: rem(16);
 }
 
 .xl-dig-size {
-    font-size: rem(20);
+  font-size: rem(20);
 }

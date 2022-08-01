@@ -1,5 +1,5 @@
-@import '../assets/styles/functions';
-@import '../assets/styles/reusables';
+@import "../../theme/functions";
+@import "../../theme/reusables";
 
 .list-card-account {
   border-bottom: solid 1px var(--lib-color-mapfre-grey, #e8ebed);
@@ -11,8 +11,8 @@
   grid-template-rows: var(--lib-mapfre-item-gridt-rows, 0fr 1fr);
   gap: 0px 0px;
   grid-template-areas:
-    'lib-mapfre-icon lib-mapfre-title lib-mapfre-arrow'
-    '. lib-mapfre-description .';
+    "lib-mapfre-icon lib-mapfre-title lib-mapfre-arrow"
+    ". lib-mapfre-description .";
   align-items: center;
   font-family: DMSansMedium;
   color: var(--lib-mapfre-light-gray, #526570);

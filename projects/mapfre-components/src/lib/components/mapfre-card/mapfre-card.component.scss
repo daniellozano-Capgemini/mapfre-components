@@ -1,4 +1,4 @@
-@import '../assets/styles/reusables.scss';
+@import "../../theme/reusables";
 
 .mapfre-card {
   .mat-card {
@@ -22,7 +22,8 @@
     width: 100%;
     flex-flow: column;
     border-radius: 4px;
-    box-shadow: 0 4px 15px 0 var(--lib-mapfre-card-shadow, rgba(82, 101, 112, 0.15));
+    box-shadow: 0 4px 15px 0
+      var(--lib-mapfre-card-shadow, rgba(82, 101, 112, 0.15));
 
     &.has-border {
       border: solid 1px var(--lib-color-mapfre-grey, #e8ebed);

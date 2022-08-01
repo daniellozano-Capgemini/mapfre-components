@@ -1,82 +1,39 @@
-import { MapfreMenuComponent } from './mapfre-menu/mapfre-menu.component';
-import { MapfreItemAccordionComponent } from './mapfre-item-accordion/mapfre-item-accordion.component';
-import { MapfreSwitchToggleComponent } from './mapfre-switch-toggle/mapfre-switch-toggle.component';
-import { MapfreCardComponent } from './mapfre-card/mapfre-card.component';
-import { MapfreCardHeaderComponent } from './mapfre-card/mapfre-card-header/mapfre-card-header.component';
-import { MapfreCardBodyComponent } from './mapfre-card/mapfre-card-body/mapfre-card-body.component';
-import { MapfreCardFooterComponent } from './mapfre-card/mapfre-card-footer/mapfre-card-footer.component';
-import { MapfreSelectMenuComponent } from './mapfre-select-menu/mapfre-select-menu.component';
-import { MapfreButtonToggleComponent } from './mapfre-button-toggle/mapfre-button-toggle.component';
-import { MapfreTabsComponent } from './mapfre-tabs/mapfre-tabs.component';
-import { MapfreProgressComponent } from './mapfre-progress/mapfre-progress.component';
-import { MapfreStepsComponent } from './mapfre-steps/mapfre-steps.component';
-import { MapfreButtonComponent } from './mapfre-button/mapfre-button.component';
-import { MapfreGreyBoxComponent } from './mapfre-grey-box/mapfre-grey-box.component';
-import { MapfreListComponent } from './mapfre-list/mapfre-list.component';
-import { MapfreInputComponent } from './mapfre-input/mapfre-input.component';
-import { MapfreInputHintComponent } from './mapfre-input-hint/mapfre-input-hint.component';
-import { MapfreInputSelectComponent } from './mapfre-input-select/mapfre-input-select.component';
-import { MapfreStarRatingComponent } from './mapfre-star-rating/mapfre-star-rating.component';
-import { MapfreAlertMessageComponent } from './mapfre-alert-message/mapfre-alert-message.component';
-import { MapfreContentComponent } from './mapfre-content/mapfre-content.component';
-import { MapfreItemComponent } from './mapfre-item/mapfre-item.component';
-import { MapfreTopListComponent } from './mapfre-top-list/mapfre-top-list.component';
-import { MapfreHeaderComponent } from './mapfre-header/mapfre-header.component';
-import { MapfreTabMenuComponent } from './mapfre-tab-menu/mapfre-tab-menu.component';
-import { MapfreRadioComponent } from './mapfre-radio/mapfre-radio.component';
-import { MapfreHighlightComponent } from './mapfre-highlight/mapfre-highlight.component';
-import { MapfreAmountComponent } from './mapfre-amount/mapfre-amount.component';
-import { MapfreSigningKeyComponent } from './mapfre-signing-key/mapfre-signing-key.component';
-import { MapfreAlertComponent } from './mapfre-alert-component/mapfre-alert-component';
-import { MapfreIconComponent } from './mapfre-icon/mapfre-icon.component';
-import { MapfreFooterComponent } from './mapfre-footer/mapfre-footer.component';
-import { MapfreDatePickerComponent } from './mapfre-date-picker/mapfre-date-picker.component';
-import { MapfreDatePickerHeaderComponent } from './mapfre-date-picker/date-picker-header/date-picker-header.component';
-import { MapfreGridComponent } from './mapfre-grid/mapfre-grid.component';
-import { MapfreResultComponent } from './mapfre-result/mapfre-result.component';
-import { MapfreCheckboxComponent } from './mapfre-checkbox/mapfre-checkbox.component';
-import { MapfreTextAreaComponent } from './mapfre-text-area/mapfre-text-area.component';
-import { MapfreAutocompleteComponent } from './mapfre-autocomplete/mapfre-autocomplete.component';
-
-export const COMPONENTS = [
-  MapfreHeaderComponent,
-  MapfreTabMenuComponent,
-  MapfreItemAccordionComponent,
-  MapfreTabsComponent,
-  MapfreButtonToggleComponent,
-  MapfreSwitchToggleComponent,
-  MapfreSelectMenuComponent,
-  MapfreButtonComponent,
-  MapfreProgressComponent,
-  MapfreStepsComponent,
-  MapfreGreyBoxComponent,
-  MapfreListComponent,
-  MapfreInputComponent,
-  MapfreInputHintComponent,
-  MapfreStarRatingComponent,
-  MapfreAlertMessageComponent,
-  MapfreItemComponent,
-  MapfreInputSelectComponent,
-  MapfreStarRatingComponent,
-  MapfreRadioComponent,
-  MapfreHighlightComponent,
-  MapfreAmountComponent,
-  MapfreSigningKeyComponent,
-  MapfreAlertComponent,
-  MapfreCardComponent,
-  MapfreResultComponent,
-  MapfreCardHeaderComponent,
-  MapfreCardBodyComponent,
-  MapfreCardFooterComponent,
-  MapfreIconComponent,
-  MapfreFooterComponent,
-  MapfreDatePickerComponent,
-  MapfreDatePickerHeaderComponent,
-  MapfreContentComponent,
-  MapfreGridComponent,
-  MapfreCheckboxComponent,
-  MapfreTextAreaComponent,
-  MapfreMenuComponent,
-  MapfreTopListComponent,
-  MapfreAutocompleteComponent,
-];
+export { MapfreMenuComponent } from './mapfre-menu/mapfre-menu.component';
+export { MapfreItemAccordionComponent } from './mapfre-item-accordion/mapfre-item-accordion.component';
+export { MapfreSwitchToggleComponent } from './mapfre-switch-toggle/mapfre-switch-toggle.component';
+export { MapfreCardComponent } from './mapfre-card/mapfre-card.component';
+export { MapfreCardHeaderComponent } from './mapfre-card/mapfre-card-header/mapfre-card-header.component';
+export { MapfreCardBodyComponent } from './mapfre-card/mapfre-card-body/mapfre-card-body.component';
+export { MapfreCardFooterComponent } from './mapfre-card/mapfre-card-footer/mapfre-card-footer.component';
+export { MapfreSelectMenuComponent } from './mapfre-select-menu/mapfre-select-menu.component';
+export { MapfreButtonToggleComponent } from './mapfre-button-toggle/mapfre-button-toggle.component';
+export { MapfreTabsComponent } from './mapfre-tabs/mapfre-tabs.component';
+export { MapfreProgressComponent } from './mapfre-progress/mapfre-progress.component';
+export { MapfreStepsComponent } from './mapfre-steps/mapfre-steps.component';
+export { MapfreButtonComponent } from './mapfre-button/mapfre-button.component';
+export { MapfreGreyBoxComponent } from './mapfre-grey-box/mapfre-grey-box.component';
+export { MapfreListComponent } from './mapfre-list/mapfre-list.component';
+export { MapfreInputComponent } from './mapfre-input/mapfre-input.component';
+export { MapfreInputHintComponent } from './mapfre-input-hint/mapfre-input-hint.component';
+export { MapfreInputSelectComponent } from './mapfre-input-select/mapfre-input-select.component';
+export { MapfreStarRatingComponent } from './mapfre-star-rating/mapfre-star-rating.component';
+export { MapfreAlertMessageComponent } from './mapfre-alert-message/mapfre-alert-message.component';
+export { MapfreContentComponent } from './mapfre-content/mapfre-content.component';
+export { MapfreItemComponent } from './mapfre-item/mapfre-item.component';
+export { MapfreTopListComponent } from './mapfre-top-list/mapfre-top-list.component';
+export { MapfreHeaderComponent } from './mapfre-header/mapfre-header.component';
+export { MapfreTabMenuComponent } from './mapfre-tab-menu/mapfre-tab-menu.component';
+export { MapfreRadioComponent } from './mapfre-radio/mapfre-radio.component';
+export { MapfreHighlightComponent } from './mapfre-highlight/mapfre-highlight.component';
+export { MapfreAmountComponent } from './mapfre-amount/mapfre-amount.component';
+export { MapfreSigningKeyComponent } from './mapfre-signing-key/mapfre-signing-key.component';
+export { MapfreAlertComponent } from './mapfre-alert-component/mapfre-alert-component';
+export { MapfreIconComponent } from './mapfre-icon/mapfre-icon.component';
+export { MapfreFooterComponent } from './mapfre-footer/mapfre-footer.component';
+export { MapfreDatePickerComponent } from './mapfre-date-picker/mapfre-date-picker.component';
+export { MapfreDatePickerHeaderComponent } from './mapfre-date-picker/date-picker-header/date-picker-header.component';
+export { MapfreGridComponent } from './mapfre-grid/mapfre-grid.component';
+export { MapfreResultComponent } from './mapfre-result/mapfre-result.component';
+export { MapfreCheckboxComponent } from './mapfre-checkbox/mapfre-checkbox.component';
+export { MapfreTextAreaComponent } from './mapfre-text-area/mapfre-text-area.component';
+export { MapfreAutocompleteComponent } from './mapfre-autocomplete/mapfre-autocomplete.component';

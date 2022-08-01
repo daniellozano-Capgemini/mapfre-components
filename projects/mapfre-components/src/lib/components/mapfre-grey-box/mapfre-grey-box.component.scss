@@ -1,5 +1,5 @@
-@import "src/theme/utils/functions";
-@import "src/theme/utils/reusables";
+@import "../../theme/functions";
+@import "../../theme/reusables";
 
 .grey-box {
   color: var(--lib-color-text-white, #ffffff);

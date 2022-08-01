@@ -1,49 +1,48 @@
-@import "../assets/styles/reusables";
-@import "../assets/styles/functions";
+@import "../../theme/reusables";
+@import "../../theme/functions";
 
-.link{
-    color: var(--mapfre-color-primary, #d81e05);
+.link {
+  color: var(--mapfre-color-primary, #d81e05);
 }
 
 .container {
-    ::ng-deep{
-        .mat-checkbox-layout {
-            white-space: normal;
-        }
-        .mat-checkbox-inner-container {
-            height: 24px;
-            width: 24px;
-            margin: 0 .5rem 0 0;
-            .mat-checkbox-background {
-                border: 1px solid #667985;
-            }
-        }
-        .mat-checkbox-layout .mat-checkbox-label {
-            font-family: DMSansRegular;
-            font-size: 1rem;
-            line-height: 1.5;
-            letter-spacing: 0.21px;
-            color: #667985;
-            align-self: flex-start;
-        }
-        .mat-checkbox-checked {
-            .mat-checkbox-layout .mat-checkbox-label {
-                font-family: DMSansMedium;
-                color: #526570;
-            }
-            .mat-checkbox-inner-container .mat-checkbox-background {
-                border-color: #9CB0BC;
-            }
-        }
-        .mat-checkbox-disabled {
-            --lib-mapfre-checkbox-green: #a8b2b7;
-            .mat-checkbox-layout .mat-checkbox-label {
-                color: #cdd7dd;
-            }
-            .mat-checkbox-inner-container .mat-checkbox-background {
-                border: 1px solid #a8b2b7;
-            }
-        }
+  ::ng-deep {
+    .mat-checkbox-layout {
+      white-space: normal;
     }
+    .mat-checkbox-inner-container {
+      height: 24px;
+      width: 24px;
+      margin: 0 0.5rem 0 0;
+      .mat-checkbox-background {
+        border: 1px solid #667985;
+      }
+    }
+    .mat-checkbox-layout .mat-checkbox-label {
+      font-family: DMSansRegular;
+      font-size: 1rem;
+      line-height: 1.5;
+      letter-spacing: 0.21px;
+      color: #667985;
+      align-self: flex-start;
+    }
+    .mat-checkbox-checked {
+      .mat-checkbox-layout .mat-checkbox-label {
+        font-family: DMSansMedium;
+        color: #526570;
+      }
+      .mat-checkbox-inner-container .mat-checkbox-background {
+        border-color: #9cb0bc;
+      }
+    }
+    .mat-checkbox-disabled {
+      --lib-mapfre-checkbox-green: #a8b2b7;
+      .mat-checkbox-layout .mat-checkbox-label {
+        color: #cdd7dd;
+      }
+      .mat-checkbox-inner-container .mat-checkbox-background {
+        border: 1px solid #a8b2b7;
+      }
+    }
+  }
 }
-

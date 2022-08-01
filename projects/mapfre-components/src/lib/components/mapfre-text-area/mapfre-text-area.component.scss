@@ -1,47 +1,48 @@
-@import "../assets/styles/functions";
-@import "../assets/styles/mixins";
-@import "../assets/styles/reusables";
+@import "../../theme/functions";
+@import "../../theme/mixins";
+@import "../../theme/reusables";
 
 :host {
-    --lib-color-success: #008C4B;
-    --lib-color-error: #DA2A2A;
-    --lib-color-disabled: #D2D4CF;
-    --lib-color-readonly: #F5F6F7;
+  --lib-color-success: #008c4b;
+  --lib-color-error: #da2a2a;
+  --lib-color-disabled: #d2d4cf;
+  --lib-color-readonly: #f5f6f7;
 
-    --lib-color-text: #526570;
-    --lib-color-text-dark: #2D373D;
-    --lib-color-text-disabled: #CDD7DD;
-    --lib-color-text-readonly: #667985;
-    --lib-color-icon: var(--lib-color-text-dark);
+  --lib-color-text: #526570;
+  --lib-color-text-dark: #2d373d;
+  --lib-color-text-disabled: #cdd7dd;
+  --lib-color-text-readonly: #667985;
+  --lib-color-icon: var(--lib-color-text-dark);
 
-    --lib-color-border: #CCCFD2;
-    --lib-color-border-active: #9CB0BC;
+  --lib-color-border: #cccfd2;
+  --lib-color-border-active: #9cb0bc;
 
-    --lib-color-input-background: #FFFFFF;
-    --lib-color-input-background-success: #FFFFFF;
-    --lib-color-input-background-error: #FAF0F2;
+  --lib-color-input-background: #ffffff;
+  --lib-color-input-background-success: #ffffff;
+  --lib-color-input-background-error: #faf0f2;
 
-    textarea {
-        @include remove-focus();
-        border-radius: 2px;
-        border: solid 1px var(--lib-color-border);
-        background-color: var(--lib-color-input-background);
-        color: var(--lib-color-text);
-        font-size: em(16);
-        transition: border .3s ease-out;
-        padding: 8px;
+  textarea {
+    @include remove-focus();
+    border-radius: 2px;
+    border: solid 1px var(--lib-color-border);
+    background-color: var(--lib-color-input-background);
+    color: var(--lib-color-text);
+    font-size: em(16);
+    transition: border 0.3s ease-out;
+    padding: 8px;
 
-        &:disabled {
-          color: var(--lib-color-text-disabled);
-          border-color: var(--lib-color-disabled);
-        }
-      }
+    &:disabled {
+      color: var(--lib-color-text-disabled);
+      border-color: var(--lib-color-disabled);
+    }
+  }
 
   // Add hover and focus styles when blocked states are not applied
   &:not(.has-error) {
     textarea {
       &:not(:disabled):not(:read-only) {
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           border-color: var(--lib-color-border-active);
         }
       }

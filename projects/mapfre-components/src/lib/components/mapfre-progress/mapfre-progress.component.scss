@@ -1,10 +1,10 @@
-@import "../assets/styles/functions";
-@import "../assets/styles/reusables";
+@import "../../theme/functions";
+@import "../../theme/reusables";
 
 :host {
-  --lib-color-text-progress: #FFFFFF;
-  --lib-color-text-objective: #2D373D;
-  --lib-color-background: #D2D4CF;
+  --lib-color-text-progress: #ffffff;
+  --lib-color-text-objective: #2d373d;
+  --lib-color-background: #d2d4cf;
   --lib-color-background-progress: #526570;
 
   div {
@@ -14,7 +14,7 @@
     span {
       font-size: em(12);
       line-height: em(18);
-      letter-spacing: .7px;
+      letter-spacing: 0.7px;
     }
 
     .progress {
@@ -44,7 +44,7 @@
     &::after {
       position: absolute;
       display: block;
-      content: '';
+      content: "";
       top: 0;
       left: 0;
       width: var(--progress-width);

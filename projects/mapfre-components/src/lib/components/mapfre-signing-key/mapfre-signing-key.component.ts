@@ -1,13 +1,21 @@
-import { Component, EventEmitter, HostListener, Input, OnInit, Output, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  HostListener,
+  Input,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
-import { ValidatorChar } from '../common/validators';
+import { ValidatorChar } from '../../common/validators';
 import { SigningKey, SIGNING_KEYS_DEFAULT_POSITIONS } from './models';
 
 @Component({
   selector: 'lib-mapfre-signing-key',
   templateUrl: './mapfre-signing-key.component.html',
-  styleUrls: ['./mapfre-signing-key.component.scss']
+  styleUrls: ['./mapfre-signing-key.component.scss'],
 })
 export class MapfreSigningKeyComponent implements OnInit {
   readonly defaultPostions: SigningKey[];
@@ -33,7 +41,9 @@ export class MapfreSigningKeyComponent implements OnInit {
 
   @HostListener('keyup', ['$event'])
   public keyup(event: any): void {
-    if (event.key !== 'Backspace') { return; }
+    if (event.key !== 'Backspace') {
+      return;
+    }
     let id = event?.target?.getAttribute('id');
     const idNumber = +id?.substr(-1);
     id = id?.substr(0, id.length - 1);
@@ -71,7 +81,9 @@ export class MapfreSigningKeyComponent implements OnInit {
 
   onInput(itemPosition: number) {
     const currentValue = this.keyInputForm.get(itemPosition.toString()).value;
-    if (!currentValue) { return; }
+    if (!currentValue) {
+      return;
+    }
 
     this.setValue(itemPosition, currentValue);
     this.changeFocus(itemPosition);
@@ -83,7 +95,7 @@ export class MapfreSigningKeyComponent implements OnInit {
     );
     this.pushToArray(this.inputTyped, {
       position: itemPosition,
-      value: currentValue
+      value: currentValue,
     });
 
     this.key.emit(this.inputTyped);
@@ -107,7 +119,7 @@ export class MapfreSigningKeyComponent implements OnInit {
       group[position] = new FormControl(
         {
           value: isDisabled ? '1' : null,
-          disabled: isDisabled
+          disabled: isDisabled,
         },
         [Validators.required, ValidatorChar]
       );

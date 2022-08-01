@@ -1,6 +1,6 @@
-@import '../assets/styles/functions';
-@import '../assets/styles/mixins';
-@import '../assets/styles/reusables';
+@import "../../theme/functions";
+@import "../../theme/mixins";
+@import "../../theme/reusables";
 
 .input-style {
   @include remove-focus();
@@ -55,7 +55,6 @@
         color: var(--lib-color-text-placeholder-disabled);
       }
     }
-
   }
 
   // Add hover and focus styles when blocked states are not applied

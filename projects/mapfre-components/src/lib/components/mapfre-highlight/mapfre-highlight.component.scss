@@ -1,5 +1,5 @@
-@import '../assets/styles/reusables';
-@import '../assets/styles/functions';
+@import "../../theme/reusables";
+@import "../../theme/functions";
 
 .container {
   background-color: var(--lib-color-mapfre-grey, #e8ebed);

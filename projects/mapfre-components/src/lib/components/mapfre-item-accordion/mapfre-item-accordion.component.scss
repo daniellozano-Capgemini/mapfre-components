@@ -1,4 +1,4 @@
-@import '../assets/styles/functions';
+@import "../../theme/functions";
 
 .left-header-container {
   display: flex;
@@ -73,7 +73,8 @@
   font-stretch: normal;
   font-style: normal;
   letter-spacing: em(0.21px);
-  border-bottom: em(1px) solid var(--lib-mapfre-accordion-item-header-boder, #e8ebed);
+  border-bottom: em(1px) solid
+    var(--lib-mapfre-accordion-item-header-boder, #e8ebed);
   .collapsable {
     transform: rotate(180deg);
   }

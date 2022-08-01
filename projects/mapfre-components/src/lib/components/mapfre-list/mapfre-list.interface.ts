@@ -1,4 +1,3 @@
-import { CloseScrollStrategyConfig } from '@angular/cdk/overlay/scroll/close-scroll-strategy';
 import { ItemAmount } from '../mapfre-amount/mapfre-amount.interface';
 
 export interface ButtonDataList {
